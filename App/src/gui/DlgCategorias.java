@@ -72,17 +72,14 @@ public class DlgCategorias extends javax.swing.JDialog {
         btnEliminar1 = new javax.swing.JButton();
         pnlCambios = new javax.swing.JPanel();
         btnModif = new javax.swing.JButton();
-        txtModCorr = new javax.swing.JTextField();
-        lblCorr2 = new javax.swing.JLabel();
-        txtModCont = new javax.swing.JTextField();
         btnBuscarM = new javax.swing.JButton();
         lblAltIDCli1 = new javax.swing.JLabel();
         lblCamNom = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         txtCamIDC = new javax.swing.JTextField();
         txtCamTC = new javax.swing.JTextField();
-        lblAvisoRFC2 = new javax.swing.JLabel();
-        lblAvisoIDC2 = new javax.swing.JLabel();
+        lblAvisoTipoc1 = new javax.swing.JLabel();
+        lblAvisoIDC = new javax.swing.JLabel();
         pnlAv1 = new javax.swing.JPanel();
         lblAvisoIDCat1 = new javax.swing.JLabel();
         lblAvisoTC = new javax.swing.JLabel();
@@ -181,24 +178,18 @@ public class DlgCategorias extends javax.swing.JDialog {
             pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblAvisoIDCat, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAvisoIDCat, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoTipoc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlAvLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(lblAvisoTipoc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(553, Short.MAX_VALUE)))
         );
         pnlAvLayout.setVerticalGroup(
             pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvLayout.createSequentialGroup()
                 .addComponent(lblAvisoIDCat, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
-            .addGroup(pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlAvLayout.createSequentialGroup()
-                    .addGap(31, 31, 31)
-                    .addComponent(lblAvisoTipoc, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(58, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblAvisoTipoc, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlAltasLayout = new javax.swing.GroupLayout(pnlAltas);
@@ -352,36 +343,6 @@ public class DlgCategorias extends javax.swing.JDialog {
             }
         });
 
-        txtModCorr.setEditable(false);
-        txtModCorr.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtModCorr.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtModCorrKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtModCorrKeyTyped(evt);
-            }
-        });
-
-        lblCorr2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblCorr2.setText("Contraseña:");
-
-        txtModCont.setEditable(false);
-        txtModCont.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtModCont.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModContActionPerformed(evt);
-            }
-        });
-        txtModCont.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtModContKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtModContKeyTyped(evt);
-            }
-        });
-
         btnBuscarM.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscarM.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         btnBuscarM.setText("BUSCAR");
@@ -419,6 +380,12 @@ public class DlgCategorias extends javax.swing.JDialog {
             }
         });
 
+        lblAvisoTipoc1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoTipoc1.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAvisoIDC.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoIDC.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -428,22 +395,26 @@ public class DlgCategorias extends javax.swing.JDialog {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCamTC)
                     .addComponent(txtCamIDC, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblAvisoTipoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoIDC, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(txtCamIDC, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtCamTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(lblAvisoIDC, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblAvisoTipoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtCamIDC, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCamTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
-
-        lblAvisoRFC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoRFC2.setForeground(new java.awt.Color(255, 0, 0));
-
-        lblAvisoIDC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoIDC2.setForeground(new java.awt.Color(255, 0, 0));
 
         lblAvisoIDCat1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoIDCat1.setForeground(new java.awt.Color(255, 0, 0));
@@ -483,74 +454,45 @@ public class DlgCategorias extends javax.swing.JDialog {
             pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCambiosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnModif))
-                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lblAltIDCli1)
-                                .addGap(31, 31, 31))
-                            .addComponent(lblCamNom))
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscarM)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(112, 112, 112)
                 .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCorr2)
-                        .addGap(48, 48, 48)
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(106, 106, 106))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblAltIDCli1)
+                        .addGap(31, 31, 31))
+                    .addComponent(lblCamNom))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnBuscarM)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnModif))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlCambiosLayout.setVerticalGroup(
             pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCambiosLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(pnlCambiosLayout.createSequentialGroup()
-                            .addGap(7, 7, 7)
-                            .addComponent(lblAltIDCli1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(lblCamNom)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(pnlCambiosLayout.createSequentialGroup()
-                            .addComponent(pnlAv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(89, 89, 89)
-                            .addComponent(btnModif)
-                            .addContainerGap(67, Short.MAX_VALUE)))
+                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlCambiosLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(lblAltIDCli1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblCamNom)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
                         .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlCambiosLayout.createSequentialGroup()
+                                .addComponent(pnlAv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(83, 83, 83))
                             .addGroup(pnlCambiosLayout.createSequentialGroup()
                                 .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnBuscarM))
-                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCorr2)
-                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(47, 47, 47)
-                                .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(182, Short.MAX_VALUE))))
+                                    .addComponent(btnBuscarM)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnModif)
+                        .addGap(73, 73, 73))))
         );
 
         pnlPrincipal.addTab("CAMBIOS", pnlCambios);
@@ -679,73 +621,62 @@ public class DlgCategorias extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTdsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTdsActionPerformed
-        /*Object clienteC[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        Object categoriaC[] = new Object[2];
+        DAOcategorias categoria = new DAOcategorias();
+        ArrayList<Categorias> categorias = null;
         while (c.getRowCount() > 0){
             c.removeRow(0);
         }
         if(c.getRowCount() == 0){
             try {
-                clientes = cliente.select();
-                for (Clientes clnt : clientes) {
+                categorias = categoria.select();
+                for (Categorias cat : categorias) {
 
-                    clienteC[0] =  clnt.getIdCliente();
-                    clienteC[1] =  clnt.getEmailCliente();
-                    clienteC[2] =  clnt.getPasswordCliente();
-                    clienteC[3] =  clnt.getRsCliente();
-                    clienteC[4] =  clnt.getRfcCLiente();
-                    clienteC[5] =  clnt.getDomicilioCliente();
-                    clienteC[6] =  clnt.getCdfiCliente();
+                    categoriaC[0] =  cat.getId_categoria();
+                    categoriaC[1] =  cat.getTipo_contenido();
 
-                    c.addRow(clienteC);
+                    c.addRow(categoriaC);
                 }
             }
             catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");*/
+        txtConIDCan.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        /*boolean encontrado = false;
+        boolean encontrado = false;
         idBuscar = Integer.parseInt(txtConIDCan.getText());
-        Object clienteM[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        Object categoriaM[] = new Object[2];
+        DAOcategorias categoria = new DAOcategorias();
+        ArrayList<Categorias> categorias = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idBuscar){
+            categorias = categoria.select();
+            for (Categorias cat : categorias) {
+                if (cat.getId_categoria() == idBuscar) {
 
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
+                    categoriaM[0] = cat.getId_categoria();
+                    categoriaM[1] = cat.getTipo_contenido();
 
                     encontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(encontrado){
-            while (c.getRowCount() > 0){
+        if (encontrado) {
+            while (c.getRowCount() > 0) {
                 c.removeRow(0);
             }
-            if(c.getRowCount() == 0)
-            c.addRow(clienteM);
+            if (c.getRowCount() == 0) {
+                c.addRow(categoriaM);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Categoria no encontrada");
         }
-        else{
-            JOptionPane.showMessageDialog(this, "Empleado no encontrado");
-        }*/
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
@@ -758,24 +689,19 @@ public class DlgCategorias extends javax.swing.JDialog {
     }//GEN-LAST:event_txtConIDCanKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
-        /*boolean clienteEncontrado = false;
-        idModificar = Integer.parseInt(txtCamIDG.getText());
-        Object clienteM[] = new Object[13];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        boolean categoriaEncontrada = false;
+        idModificar = Integer.parseInt(txtCamIDC.getText());
+        Object categoriaM[] = new Object[2];
+        DAOcategorias categoria = new DAOcategorias();
+        ArrayList<Categorias> categorias = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idModificar){
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            categorias = categoria.select();
+            for (Categorias cat : categorias) {
+                if(cat.getId_categoria() == idModificar){
+                    categoriaM[0] =  cat.getId_categoria();
+                    categoriaM[1] =  cat.getTipo_contenido();
+                    categoriaEncontrada = true;
                     break;
                 }
             }
@@ -783,131 +709,75 @@ public class DlgCategorias extends javax.swing.JDialog {
         catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(clienteEncontrado){
+        if(categoriaEncontrada){
             btnModif.setEnabled(true);
-            habilitarCompMod();
-            agrgarElementosModif(clienteM);
+            //habilitarCompMod();
+            //agrgarElementosModif(categoriaM);
         }
         else
-        JOptionPane.showMessageDialog(this, "Empleado no encontrado");*/
+        JOptionPane.showMessageDialog(this, "Categoria no encontrada");
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
-    private void txtModContKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModContKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContKeyTyped
-
-    private void txtModContKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModContKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContKeyReleased
-
-    private void txtModContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModContActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContActionPerformed
-
-    private void txtModCorrKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModCorrKeyTyped
-        //validarCorreo(evt);
-    }//GEN-LAST:event_txtModCorrKeyTyped
-
-    private void txtModCorrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModCorrKeyReleased
-        //habilitarBotonM();
-        //validarVacios1();
-    }//GEN-LAST:event_txtModCorrKeyReleased
-
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        /*empleadoModID = Integer.parseInt(txtCamIDG.getText());
-        String clienteModEmail = txtModCorr.getText();
-        String clienteModPass = txtModCont.getText();
-        String clienteModRs = txtModRaz.getText();
-        String clienteModRFC = txtModRFC.getText();
-        String clienteModDom = txtModDom.getText();
-        String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
+        //categoriaModId = Integer.parseInt(txtCamIDC.getText());
+        String categoriaModId_categoria = String.valueOf(txtCamIDC.getText());
+        String categoriaModTipo_contenido = txtCamTC.getText();
 
-        /*
-        1.- Crear una instancia del objeto DAOClientes
-        DAOEmpleados empleado = new DAOEmpleados();
-        2.- Creamos un nuevo objeto de tipo Cliente
-        Empleados empleadosU = new Empleados();
-        //Agregamos el ID de la persona que deseamos modificar
-        empleadoU.setIdCliente(1);
-        empleadoU.setRsCliente("RS");
-        //Seteamos los demas parametros
-        3.- Ejecutamos
-        empleado.update(empleadosU);//Devulve un entero si se aplico el UPDATE, exactamente un 1 porque
-        //esa es la cantidad de registros que modifico
-        */
-        /*DAOclientes cliente = new DAOclientes();
-        Clientes clienteU = new Clientes();
-        clienteU.setIdCliente(empleadoModID);
-        clienteU.setEmailCliente(clienteModEmail);
-        clienteU.setPasswordCliente(clienteModPass);
-        clienteU.setRsCliente(clienteModRs);
-        clienteU.setRfcCLiente(clienteModRFC);
-        clienteU.setDomicilioCliente(clienteModDom);
-        clienteU.setCdfiCliente(cliadoModCdfi);
+        //String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
+        DAOcategorias categoria = new DAOcategorias();
+        Categorias categoriaU = new Categorias();
+        //categoriaU.setId_categoria(categoriaModId_categoria);
+        categoriaU.setTipo_contenido(categoriaModTipo_contenido);
+
         try {
-            if(cliente.update(clienteU) != 0){
-                JOptionPane.showMessageDialog(this, "Empleado modificado con exito");
-                deshabilitarCompMod();
+            if (categoria.update(categoriaU) != 0) {
+                JOptionPane.showMessageDialog(this, "Categoria modificada con exito");
+                //deshabilitarCompMod();
+            } else {
+                JOptionPane.showMessageDialog(this, "La categoria no se modifico");
             }
-            else
-            JOptionPane.showMessageDialog(this, "El empleado no se modifico");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }*/
+        }
     }//GEN-LAST:event_btnModifActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        /*DELETE
-        1.- Crear una instancia del objeto DAOEmpleados
-        DAOempleados empleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-        Empleados empleadoD = new Empleados();
-        3.- Agregamos al objeto persona el ID del empleado a eliminar
-        empleadoD.setIdCliente(1);
-        4.- Ejecutamos
-        empleado.delete(empleadoD);//Devulve un entero si se aplico el DELETE, exactamente un 1 porque
-        //esa es la cantidad de registros que elimino
-        */
-        /*if(idEliminar != 0){
-            DAOclientes cliente = new DAOclientes();
-            Clientes deleteCliente = new Clientes();
-            deleteCliente.setIdCliente(idEliminar);
+        
+        if(idEliminar != 0){
+            DAOcategorias categoria = new DAOcategorias();
+            Categorias deleteCategoria = new Categorias();
+            deleteCategoria.setId_categoria(idEliminar);
             try {
-                if(cliente.delete(deleteCliente) != 0){
-                    JOptionPane.showMessageDialog(this, "Cliente eliminado con exito");
+                if(categoria.delete(deleteCategoria) != 0){
+                    JOptionPane.showMessageDialog(this, "Categoria eliminada con exito");
                     txtBajID.setText("");
                     txtBajID.removeAll();
                 }
                 else
-                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el cliente");
+                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar la categoria");
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
         while (e.getRowCount() > 0){
             e.removeRow(0);
-        }*/
+        }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEActionPerformed
-        /*boolean clienteEncontrado = false;
+        boolean categoriaEncontrada = false;
         idEliminar = Integer.parseInt(txtBajID.getText());
-        Object clienteE[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientess = null;
+        Object categoriaE[] = new Object[7];
+        DAOcategorias categoria = new DAOcategorias();
+        ArrayList<Categorias> categoriass = null;
 
         try {
-            clientess = cliente.select();
-            for (Clientes clnt : clientess) {
-                if(clnt.getIdCliente()== idEliminar){
-                    clienteE[0] =  clnt.getIdCliente();
-                    clienteE[1] =  clnt.getEmailCliente();
-                    clienteE[2] =  clnt.getPasswordCliente();
-                    clienteE[3] =  clnt.getRsCliente();
-                    clienteE[4] =  clnt.getRfcCLiente();
-                    clienteE[5] =  clnt.getDomicilioCliente();
-                    clienteE[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            categoriass = categoria.select();
+            for (Categorias cat : categoriass) {
+                if(cat.getId_categoria()== idEliminar){
+                    categoriaE[0] =  cat.getId_categoria();
+                    categoriaE[1] =  cat.getTipo_contenido();
+                    categoriaEncontrada = true;
                     break;
                 }
             }
@@ -918,16 +788,16 @@ public class DlgCategorias extends javax.swing.JDialog {
         while (e.getRowCount() > 0){
             e.removeRow(0);
         }
-        if(clienteEncontrado){
+        if(categoriaEncontrada){
 
             if(e.getRowCount() == 0){
-                e.addRow(clienteE);
+                e.addRow( categoriaE);
                 btnEliminar1.setEnabled(true);
             }
         }
         else{
-            JOptionPane.showMessageDialog(this,"Cliente no encontrado");
-        }*/
+            JOptionPane.showMessageDialog(this,"Categoria no encontrada");
+        }
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
@@ -940,16 +810,12 @@ public class DlgCategorias extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        /*String emailCliente = txtAltCorrC.getText();
-        String passwordCliente = txtAltDur.getText();
-        String rsCliente = txtAltRaz.getText();
-        String rfcCLiente = txtAltRFCC.getText();
-        String domicilioCliente = txtAltDom.getText();
-        String cdfiCliente = CmbBxAltCFDICli.getSelectedItem().toString();
+        String idcategoria = txtAltIDCat.getText();
+        String tipocontenido = txtAltTipoC.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
 
-        insertarCliente(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);*/
+        //insertarCategoria(idcategoria,tipocontenido);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
      private void txtAltIDCKeyReleased(java.awt.event.KeyEvent evt) {                                   
@@ -992,106 +858,66 @@ public class DlgCategorias extends javax.swing.JDialog {
     private void txtAltIDCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDCatKeyReleased
 
     }//GEN-LAST:event_txtAltIDCatKeyReleased
+    public void validarVacios() {
+        if (txtAltIDCat.getText().isEmpty()) {
+            lblAvisoIDCat.setText("Campo obligatorio");
+        } else {
+            lblAvisoIDCat.setText("");
+        }
+        if (txtAltTipoC.getText().isEmpty()) {
+            lblAvisoTipoc.setText("Campo obligatorio");
+        } else {
+            lblAvisoTipoc.setText("");
+        }
+    }
 
-   
-     /*public void validarVacios(){
-        if(txtAltIDC.getText().isEmpty()){
+    public void validarVacios1() {
+        if (txtCamIDC.getText().isEmpty()) {
             lblAvisoIDC.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoIDC.setText("");
         }
-        if(txtAltRaz.getText().isEmpty()){
-            lblAvisoIdGen.setText("Campo obligatorio");
-        }else{
-            lblAvisoIdGen.setText("");
+        if (txtCamTC.getText().isEmpty()) {
+            lblAvisoTipoc1.setText("Campo obligatorio");
+        } else {
+            lblAvisoTipoc1.setText("");
         }
-        if(txtAltRFCC.getText().isEmpty()){
-            lblAvisoRFC.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC.setText("");
-        }
-        if(txtAltDom.getText().isEmpty()){
-            lblAvisoDom.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom.setText("");
-        }
-        if(txtAltCorrC.getText().isEmpty()){
-            lblAvisoCorr.setText("Campo obligatorio");
-        }else 
-            if(!txtAltCorrC.getText().contains("@")
-                  ||!txtAltCorrC.getText().contains(".")){
-                lblAvisoCorr.setText("Correo NO valido");
-            }else{
-                lblAvisoCorr.setText("");
-            }
-        if(txtAltDur.getText().isEmpty()){
-            lblAvisoNombre.setText("Campo obligatorio");
-        }else{
-            lblAvisoNombre.setText("");
-        }
-    }
-     
-     public void validarVacios1(){
-        if(txtCamIDG.getText().isEmpty()){
-            lblAvisoIDC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoIDC1.setText("");
-        }
-        if(txtModRaz.getText().isEmpty()){
-            lblAvisoRaz1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRaz1.setText("");
-        }
-        if(txtModRFC.getText().isEmpty()){
-            lblAvisoRFC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC1.setText("");
-        }
-        if(txtModDom.getText().isEmpty()){
-            lblAvisoDom1.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom1.setText("");
-        }
-        if(txtModCorr.getText().isEmpty()){
+
+        /*if (txtModCorr.getText().isEmpty()) {
             lblAvisoCorr1.setText("Campo obligatorio");
-        }else 
-            if(!txtModCorr.getText().contains("@")
-                  ||!txtModCorr.getText().contains(".")){
-                lblAvisoCorr1.setText("Correo NO valido");
-            }else{
-                lblAvisoCorr1.setText("");
-            }
-        if(txtModCont.getText().isEmpty()){
-            lblAvisoCont1.setText("Campo obligatorio");
-        }else{
-            lblAvisoCont1.setText("");
-        }
+        } else if (!txtModCorr.getText().contains("@")
+                || !txtModCorr.getText().contains(".")) {
+            lblAvisoCorr1.setText("Correo NO valido");
+        } else {
+            lblAvisoCorr1.setText("");
+        }*/
     }
-    public void validarVacios2(){
-        if(txtBajID.getText().isEmpty()){
+
+    public void validarVacios2() {
+        if (txtBajID.getText().isEmpty()) {
             lblAvisoID2.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID2.setText("");
         }
     }
-    
-    public void validarVacios3(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void validarVacios3() {
+        if (txtConIDCan.getText().isEmpty()) {
             lblAvisoID3.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID3.setText("");
         }
     }
-    
-    public void validarCorreo(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=44
-                ||evento.getKeyChar()==47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=63
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=94
-                ||evento.getKeyChar()==96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
+
+    public void validarCorreo(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 44
+                || evento.getKeyChar() == 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 63
+                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 94
+                || evento.getKeyChar() == 96
+                || evento.getKeyChar() >= 123 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permite este caracter");
+            JOptionPane.showMessageDialog(this, "No se permite este caracter");
         }
     }
     
@@ -1125,32 +951,24 @@ public class DlgCategorias extends javax.swing.JDialog {
         }
     }
     
-    public void habilitarBoton(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtAltDur.getText().isEmpty()){
+    public void habilitarBoton() {
+        if (txtAltIDCat.getText().isEmpty()
+                || txtAltTipoC.getText().isEmpty()) {
             btnAgregar.setEnabled(false);
-        }else{
+        } else {
             btnAgregar.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonM(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtModCont.getText().isEmpty()){
+
+    public void habilitarBotonM() {
+        if (txtAltIDCat.getText().isEmpty()
+                || txtAltTipoC.getText().isEmpty()) {
             btnModif.setEnabled(false);
-        }else{
+        } else {
             btnModif.setEnabled(true);
         }
     }
-    
+
     public void habilitarBotonE(){
         if(txtBajID.getText().isEmpty()){
             btnBuscarE.setEnabled(false);
@@ -1166,8 +984,8 @@ public class DlgCategorias extends javax.swing.JDialog {
             btnBuscar.setEnabled(true);
         }
     }
-    */
-    /*public void validarCaracter(java.awt.event.KeyEvent evento){
+    
+    public void validarCaracter(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
                 || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
                 || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
@@ -1177,31 +995,20 @@ public class DlgCategorias extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
         }
     }
-    private void insertarCliente(String emailCliente, String passwordCliente, String rsCliente, String rfcCLiente, String domicilioCliente, String cdfiCliente){
-        /*INSERT
-        1.- Crear una instancia del objeto DAOclientes
-                DAOempleados nuevoEmpleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-                Empleados empleadoI = new Empleados();
-                agregamos cada dato a empleadoI
-                empleadoI.setRsCliente("");
-                //o un constructor que inicialice todo
-        3.- Una vez que se llenan los datos para el objeto empleadoI, ejecutar
-                nuevoEmpleado.insert(empleadoI); //Devulve un entero si se aplico el INSERT, exactamente un 1 porque
-                                        //esa es la cantidad de registros que inserto
-        */
-        
-        /*DAOclientes nuevoCliente = new DAOclientes();
-        Clientes cliente = new Clientes(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);
+    private void insertarCategoria(String idcategoria,String tipocontenido){
+
+        DAOcategorias nuevaCategoria = new DAOcategorias();
+        Categorias categoria = new Categorias();
         try {
-            if(nuevoCliente.insert(cliente) != 0)
-                JOptionPane.showMessageDialog(this,"Cliente dado de alta con exito");
-            else
-                JOptionPane.showMessageDialog(this,"El cliente no pudo ser dado de alta");
+            if (nuevaCategoria.insert(categoria) != 0) {
+                JOptionPane.showMessageDialog(this, "Categoria dada de alta con exito");
+            } else {
+                JOptionPane.showMessageDialog(this, "La Categoria no pudo ser dada de alta");
+            }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -1221,16 +1028,15 @@ public class DlgCategorias extends javax.swing.JDialog {
     private javax.swing.JLabel lblAltTipoC;
     private javax.swing.JLabel lblAvisoID2;
     private javax.swing.JLabel lblAvisoID3;
-    private javax.swing.JLabel lblAvisoIDC2;
+    private javax.swing.JLabel lblAvisoIDC;
     private javax.swing.JLabel lblAvisoIDCat;
     private javax.swing.JLabel lblAvisoIDCat1;
-    private javax.swing.JLabel lblAvisoRFC2;
     private javax.swing.JLabel lblAvisoTC;
     private javax.swing.JLabel lblAvisoTipoc;
+    private javax.swing.JLabel lblAvisoTipoc1;
     private javax.swing.JLabel lblBajID;
     private javax.swing.JLabel lblCamNom;
     private javax.swing.JLabel lblConsIdCan;
-    private javax.swing.JLabel lblCorr2;
     private javax.swing.JPanel pnlAltas;
     private javax.swing.JPanel pnlAv;
     private javax.swing.JPanel pnlAv1;
@@ -1247,35 +1053,23 @@ public class DlgCategorias extends javax.swing.JDialog {
     private javax.swing.JTextField txtCamIDC;
     private javax.swing.JTextField txtCamTC;
     private javax.swing.JTextField txtConIDCan;
-    private javax.swing.JTextField txtModCont;
-    private javax.swing.JTextField txtModCorr;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0,empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, empleadoModID = 0, idBuscar = 0;
 
-    //private void agrgarElementosModif(Object[] clienteM) {
-//        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-       /* txtModCorr.setText(clienteM[1].toString());
-        txtModCont.setText(clienteM[2].toString());
-        txtModRaz.setText(clienteM[3].toString());
-        txtModRFC.setText(clienteM[4].toString());
-        txtModDom.setText(clienteM[5].toString());
-//        txtModCont.setText(empleadoM[6].toString());        
-    }*/
-    
-   /* private void habilitarCompMod(){
-        txtModCorr.setEditable(true);
-        txtModCont.setEditable(true);
-        txtModRaz.setEditable(true);
-        txtModRFC.setEditable(true);
-        txtModDom.setEditable(true);
-//        txtModCont.setEditable(true);
+    private void agrgarElementosModif(Object[] categoriaM) {
+        //emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente 
+        txtCamIDC.setText(categoriaM[1].toString());
+        txtCamTC.setText(categoriaM[2].toString());
     }
-    private void deshabilitarCompMod(){
-        txtModCorr.setEditable(false);
-        txtModCont.setEditable(false);
-        txtModRaz.setEditable(false);
-        txtModRFC.setEditable(false);
-        txtModDom.setEditable(false);
-//        txtModCont.setEditable(true);
-    }*/
+
+    private void habilitarCompMod() {
+        txtCamIDC.setEditable(true);
+        txtCamTC.setEditable(true);
+
+    }
+
+    private void deshabilitarCompMod() {
+        txtCamIDC.setEditable(false);
+        txtCamTC.setEditable(false);
+    }
 }

@@ -61,16 +61,16 @@ public class DlgArtistas extends javax.swing.JDialog {
         btnAgregar = new javax.swing.JButton();
         lblCorr1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txtAltIDC = new javax.swing.JTextField();
-        txtAltRFCC = new javax.swing.JTextField();
-        txtAltCorrC = new javax.swing.JTextField();
-        txtAltOy = new javax.swing.JTextField();
+        txtAltIDA = new javax.swing.JTextField();
+        txtAltNom = new javax.swing.JTextField();
+        txtAltDisc = new javax.swing.JTextField();
+        txtAltSegu = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAltRedesS = new javax.swing.JTextArea();
         pnlAv = new javax.swing.JPanel();
         lblAvisoIDA = new javax.swing.JLabel();
         lblAvisoNombre = new javax.swing.JLabel();
-        lblAvisoDur = new javax.swing.JLabel();
+        lblAvisoSeg = new javax.swing.JLabel();
         lblAvisoRS = new javax.swing.JLabel();
         lblAvisoDisc = new javax.swing.JLabel();
         pnlBajas = new javax.swing.JPanel();
@@ -98,9 +98,12 @@ public class DlgArtistas extends javax.swing.JDialog {
         txtCamDisc = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtCamRedesS = new javax.swing.JTextArea();
+        lblAvisoSegCam = new javax.swing.JLabel();
+        lblAvisoDiscCam = new javax.swing.JLabel();
+        lblAvisoNomCam = new javax.swing.JLabel();
+        lblAvisoIDartCam = new javax.swing.JLabel();
+        lblAvisoRsCam = new javax.swing.JLabel();
         lblCamExp = new javax.swing.JLabel();
-        lblAvisoRFC2 = new javax.swing.JLabel();
-        lblAvisoIDC2 = new javax.swing.JLabel();
         pnlAv1 = new javax.swing.JPanel();
         lblAvisoIDAr1 = new javax.swing.JLabel();
         lblAvisoNombre1 = new javax.swing.JLabel();
@@ -157,56 +160,56 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblCorr1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCorr1.setText("Discografia");
 
-        txtAltIDC.setEditable(false);
-        txtAltIDC.setText("0");
-        txtAltIDC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltIDC.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAltIDA.setEditable(false);
+        txtAltIDA.setText("0");
+        txtAltIDA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtAltIDA.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltIDCKeyReleased(evt);
+                txtAltIDAKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltIDCKeyTyped(evt);
+                txtAltIDAKeyTyped(evt);
             }
         });
 
-        txtAltRFCC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltRFCC.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAltNom.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtAltNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltRFCCKeyReleased(evt);
+                txtAltNomKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltRFCCKeyTyped(evt);
+                txtAltNomKeyTyped(evt);
             }
         });
 
-        txtAltCorrC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltCorrC.addActionListener(new java.awt.event.ActionListener() {
+        txtAltDisc.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtAltDisc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAltCorrCActionPerformed(evt);
+                txtAltDiscActionPerformed(evt);
             }
         });
-        txtAltCorrC.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAltDisc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltCorrCKeyReleased(evt);
+                txtAltDiscKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltCorrCKeyTyped(evt);
+                txtAltDiscKeyTyped(evt);
             }
         });
 
-        txtAltOy.setEditable(false);
-        txtAltOy.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltOy.addActionListener(new java.awt.event.ActionListener() {
+        txtAltSegu.setEditable(false);
+        txtAltSegu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtAltSegu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAltOyActionPerformed(evt);
+                txtAltSeguActionPerformed(evt);
             }
         });
-        txtAltOy.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAltSegu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltOyKeyReleased(evt);
+                txtAltSeguKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltOyKeyTyped(evt);
+                txtAltSeguKeyTyped(evt);
             }
         });
 
@@ -223,23 +226,23 @@ public class DlgArtistas extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtAltOy, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                        .addComponent(txtAltIDC, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtAltRFCC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtAltCorrC, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(txtAltSegu, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                        .addComponent(txtAltIDA, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtAltNom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAltDisc, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(txtAltIDC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltIDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(txtAltRFCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtAltOy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltSegu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(txtAltCorrC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -251,8 +254,8 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblAvisoNombre.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoNombre.setForeground(new java.awt.Color(255, 0, 0));
 
-        lblAvisoDur.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoDur.setForeground(new java.awt.Color(255, 0, 0));
+        lblAvisoSeg.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoSeg.setForeground(new java.awt.Color(255, 0, 0));
 
         lblAvisoRS.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoRS.setForeground(new java.awt.Color(255, 0, 0));
@@ -272,7 +275,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                     .addGroup(pnlAvLayout.createSequentialGroup()
                         .addComponent(lblAvisoDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAvisoDur, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblAvisoSeg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblAvisoRS, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -284,7 +287,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                 .addComponent(lblAvisoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addGroup(pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblAvisoDur, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoSeg, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvisoDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lblAvisoRS, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,7 +309,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                         .addComponent(jLabel2))
                     .addComponent(lblAltIDCli)
                     .addComponent(lblCorr1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(pnlAltasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -559,6 +562,21 @@ public class DlgArtistas extends javax.swing.JDialog {
         txtCamRedesS.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         jScrollPane2.setViewportView(txtCamRedesS);
 
+        lblAvisoSegCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoSegCam.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAvisoDiscCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoDiscCam.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAvisoNomCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoNomCam.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAvisoIDartCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoIDartCam.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAvisoRsCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoRsCam.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -566,37 +584,52 @@ public class DlgArtistas extends javax.swing.JDialog {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtCamNom)
-                        .addComponent(txtCamIDAr)
-                        .addComponent(txtCamSeg, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                        .addComponent(txtCamDisc))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblAvisoRsCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCamNom)
+                            .addComponent(txtCamIDAr)
+                            .addComponent(txtCamSeg, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(txtCamDisc))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAvisoDiscCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAvisoNomCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAvisoSegCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAvisoIDartCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(txtCamIDAr, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCamIDAr, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoIDartCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(txtCamNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCamNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoNomCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(txtCamSeg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtCamSeg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoSegCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(txtCamDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtCamDisc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAvisoRsCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblAvisoDiscCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
         lblCamExp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCamExp.setText("Seguidores");
-
-        lblAvisoRFC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoRFC2.setForeground(new java.awt.Color(255, 0, 0));
-
-        lblAvisoIDC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoIDC2.setForeground(new java.awt.Color(255, 0, 0));
 
         lblAvisoIDAr1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoIDAr1.setForeground(new java.awt.Color(255, 0, 0));
@@ -665,25 +698,18 @@ public class DlgArtistas extends javax.swing.JDialog {
                                     .addComponent(lblCamNom)
                                     .addComponent(lblAltIDCli1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109)
                         .addComponent(btnBuscarM)
                         .addGap(18, 18, 18)
                         .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(112, 112, 112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCorr2)
+                .addGap(48, 48, 48)
                 .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCorr2)
-                        .addGap(48, 48, 48)
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(106, 106, 106))
-                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106))
         );
         pnlCambiosLayout.setVerticalGroup(
             pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -708,22 +734,16 @@ public class DlgArtistas extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(btnModif))
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnBuscarM))
-                            .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscarM))
+                        .addGap(85, 85, 85)
                         .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCorr2)
                             .addGroup(pnlCambiosLayout.createSequentialGroup()
                                 .addGap(4, 4, 4)
-                                .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(47, 47, 47)
-                        .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                                .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pnlPrincipal.addTab("CAMBIOS", pnlCambios);
@@ -852,73 +872,67 @@ public class DlgArtistas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTdsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTdsActionPerformed
-        /*Object clienteC[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
-        while (c.getRowCount() > 0){
+        Object artistaC[] = new Object[4];
+        DAOartistas artista = new DAOartistas();
+        ArrayList<Artistas> artistas = null;
+        while (c.getRowCount() > 0) {
             c.removeRow(0);
         }
-        if(c.getRowCount() == 0){
+        if (c.getRowCount() == 0) {
             try {
-                clientes = cliente.select();
-                for (Clientes clnt : clientes) {
+                artistas = artista.select();
+                for (Artistas art : artistas) {
 
-                    clienteC[0] =  clnt.getIdCliente();
-                    clienteC[1] =  clnt.getEmailCliente();
-                    clienteC[2] =  clnt.getPasswordCliente();
-                    clienteC[3] =  clnt.getRsCliente();
-                    clienteC[4] =  clnt.getRfcCLiente();
-                    clienteC[5] =  clnt.getDomicilioCliente();
-                    clienteC[6] =  clnt.getCdfiCliente();
+                    artistaC[0] = art.getId_artista();
+                    artistaC[1] = art.getNombre_artista();
+                    artistaC[2] = art.getSeguidores_artista();
+                    artistaC[3] = art.getDiscografia();
+                    artistaC[4] = art.getRedes_sociales();
 
-                    c.addRow(clienteC);
+                    c.addRow(artistaC);
                 }
-            }
-            catch (SQLException ex) {
+            } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");*/
+        txtConIDCan.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        /*boolean encontrado = false;
+        boolean encontrado = false;
         idBuscar = Integer.parseInt(txtConIDCan.getText());
-        Object clienteM[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        Object artistaM[] = new Object[4];
+        DAOartistas artista = new DAOartistas();
+        ArrayList<Artistas> artistas = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idBuscar){
+            artistas = artista.select();
+            for (Artistas art : artistas) {
+                if (art.getId_artista() == idBuscar) {
 
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
+                    artistaM[0] = art.getId_artista();
+                    artistaM[1] = art.getNombre_artista();
+                    artistaM[2] = art.getSeguidores_artista();
+                    artistaM[3] = art.getDiscografia();
+                    artistaM[4] = art.getRedes_sociales();
 
                     encontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(encontrado){
-            while (c.getRowCount() > 0){
+        if (encontrado) {
+            while (c.getRowCount() > 0) {
                 c.removeRow(0);
             }
-            if(c.getRowCount() == 0)
-            c.addRow(clienteM);
+            if (c.getRowCount() == 0) {
+                c.addRow(artistaM);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Artista no encontrado");
         }
-        else{
-            JOptionPane.showMessageDialog(this, "Empleado no encontrado");
-        }*/
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
@@ -931,38 +945,34 @@ public class DlgArtistas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtConIDCanKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
-        /*boolean clienteEncontrado = false;
-        idModificar = Integer.parseInt(txtCamIDG.getText());
-        Object clienteM[] = new Object[13];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        boolean artistaEncontrado = false;
+        idModificar = Integer.parseInt(txtCamIDAr.getText());
+        Object artistaM[] = new Object[4];
+        DAOartistas artista = new DAOartistas();
+        ArrayList<Artistas> artistas = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idModificar){
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            artistas = artista.select();
+            for (Artistas art : artistas) {
+                if (art.getId_artista() == idModificar) {
+                    artistaM[0] = art.getId_artista();
+                    artistaM[1] = art.getNombre_artista();
+                    artistaM[2] = art.getSeguidores_artista();
+                    artistaM[3] = art.getDiscografia();
+                    artistaM[4] = art.getRedes_sociales();
+                    artistaEncontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(clienteEncontrado){
+        if (artistaEncontrado) {
             btnModif.setEnabled(true);
-            habilitarCompMod();
-            agrgarElementosModif(clienteM);
-        }
-        else
-        JOptionPane.showMessageDialog(this, "Empleado no encontrado");*/
+            //habilitarCompMod();
+            //agrgarElementosModif(clienteM);
+        } else
+            JOptionPane.showMessageDialog(this, "Artista no encontrado");
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void txtModContKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModContKeyTyped
@@ -1113,62 +1123,61 @@ public class DlgArtistas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        /*String emailCliente = txtAltCorrC.getText();
-        String passwordCliente = txtAltDur.getText();
-        String rsCliente = txtAltRaz.getText();
-        String rfcCLiente = txtAltRFCC.getText();
-        String domicilioCliente = txtAltDom.getText();
-        String cdfiCliente = CmbBxAltCFDICli.getSelectedItem().toString();
+        String idArtista = txtAltIDA.getText();
+        String nombreArtista = txtAltNom.getText();
+        String seguidoresArtista = txtAltSegu.getText();
+        String discografiaArtista = txtAltDisc.getText();
+        String redesArtista = txtAltRedesS.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
 
-        insertarCliente(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);*/
+        insertarArtista(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void txtAltCorrCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltCorrCKeyTyped
+    private void txtAltDiscKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyTyped
         //validarCorreo(evt);
-    }//GEN-LAST:event_txtAltCorrCKeyTyped
+    }//GEN-LAST:event_txtAltDiscKeyTyped
 
-    private void txtAltCorrCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltCorrCKeyReleased
+    private void txtAltDiscKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyReleased
         /*habilitarBoton();
         validarVacios();*/
-    }//GEN-LAST:event_txtAltCorrCKeyReleased
+    }//GEN-LAST:event_txtAltDiscKeyReleased
 
-    private void txtAltCorrCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltCorrCActionPerformed
+    private void txtAltDiscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltDiscActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltCorrCActionPerformed
+    }//GEN-LAST:event_txtAltDiscActionPerformed
 
-    private void txtAltRFCCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltRFCCKeyTyped
+    private void txtAltNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyTyped
        // validarRFC(evt);
-    }//GEN-LAST:event_txtAltRFCCKeyTyped
+    }//GEN-LAST:event_txtAltNomKeyTyped
 
-    private void txtAltRFCCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltRFCCKeyReleased
+    private void txtAltNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyReleased
        /* habilitarBoton();
         validarVacios();*/
-    }//GEN-LAST:event_txtAltRFCCKeyReleased
+    }//GEN-LAST:event_txtAltNomKeyReleased
 
      private void txtAltIDCKeyReleased(java.awt.event.KeyEvent evt) {                                   
        // validarNumeros(evt);
     }  
-    private void txtAltIDCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDCKeyTyped
+    private void txtAltIDAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDAKeyTyped
        // validarNumeros(evt);
-    }//GEN-LAST:event_txtAltIDCKeyTyped
+    }//GEN-LAST:event_txtAltIDAKeyTyped
 
 //GEN-FIRST:event_txtAltIDCKeyReleased
  
 //GEN-LAST:event_txtAltIDCKeyReleased
 
-    private void txtAltOyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltOyActionPerformed
+    private void txtAltSegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltSegActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltOyActionPerformed
+    }//GEN-LAST:event_txtAltSegActionPerformed
 
-    private void txtAltOyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltOyKeyReleased
+    private void txtAltSegKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltSegKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltOyKeyReleased
+    }//GEN-LAST:event_txtAltSegKeyReleased
 
-    private void txtAltOyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltOyKeyTyped
+    private void txtAltSegKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltSegKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltOyKeyTyped
+    }//GEN-LAST:event_txtAltSegKeyTyped
 
     private void txtCamIDArKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamIDArKeyReleased
         // TODO add your handling code here:
@@ -1207,83 +1216,71 @@ public class DlgArtistas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCamDiscKeyTyped
 
    
-     /*public void validarVacios(){
-        if(txtAltIDC.getText().isEmpty()){
-            lblAvisoIDC.setText("Campo obligatorio");
+     public void validarVacios(){
+        if(txtAltIDA.getText().isEmpty()){ //id_artista
+            lblAvisoIDA.setText("Campo obligatorio");
         }else{
-            lblAvisoIDC.setText("");
+            lblAvisoIDA.setText("");
         }
-        if(txtAltRaz.getText().isEmpty()){
-            lblAvisoIdGen.setText("Campo obligatorio");
-        }else{
-            lblAvisoIdGen.setText("");
-        }
-        if(txtAltRFCC.getText().isEmpty()){
-            lblAvisoRFC.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC.setText("");
-        }
-        if(txtAltDom.getText().isEmpty()){
-            lblAvisoDom.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom.setText("");
-        }
-        if(txtAltCorrC.getText().isEmpty()){
-            lblAvisoCorr.setText("Campo obligatorio");
-        }else 
-            if(!txtAltCorrC.getText().contains("@")
-                  ||!txtAltCorrC.getText().contains(".")){
-                lblAvisoCorr.setText("Correo NO valido");
-            }else{
-                lblAvisoCorr.setText("");
-            }
-        if(txtAltDur.getText().isEmpty()){
+        if(txtAltNom.getText().isEmpty()){ //nombre_artista
             lblAvisoNombre.setText("Campo obligatorio");
         }else{
             lblAvisoNombre.setText("");
         }
+        if(txtAltSegu.getText().isEmpty()){ //seguidores_artista
+            lblAvisoSeg.setText("Campo obligatorio");
+        }else{
+            lblAvisoSeg.setText("");
+        }
+        if(txtAltDisc.getText().isEmpty()){ //discografia
+            lblAvisoDisc.setText("Campo obligatorio");
+        }else{
+            lblAvisoDisc.setText("");
+        }
+        if(txtAltDisc.getText().isEmpty()){
+            lblAvisoDisc.setText("Campo obligatorio");
+        }else{
+            lblAvisoDisc.setText("");
+        }
+        if(txtAltRedesS.getText().isEmpty()){
+            lblAvisoRS.setText("Campo obligatorio");
+        }else{
+            lblAvisoRS.setText("");
+        }
     }
      
-     public void validarVacios1(){
-        if(txtCamIDG.getText().isEmpty()){
-            lblAvisoIDC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoIDC1.setText("");
+    public void validarVacios1() {
+        if (txtCamIDAr.getText().isEmpty()) {
+            lblAvisoIDartCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoIDartCam.setText("");
         }
-        if(txtModRaz.getText().isEmpty()){
-            lblAvisoRaz1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRaz1.setText("");
+        if (txtCamNom.getText().isEmpty()) {
+            lblAvisoNomCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoNomCam.setText("");
         }
-        if(txtModRFC.getText().isEmpty()){
-            lblAvisoRFC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC1.setText("");
+        if (txtCamSeg.getText().isEmpty()) {
+            lblAvisoSegCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoSegCam.setText("");
         }
-        if(txtModDom.getText().isEmpty()){
-            lblAvisoDom1.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom1.setText("");
+        if (txtCamDisc.getText().isEmpty()) {
+            lblAvisoDiscCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoDiscCam.setText("");
         }
-        if(txtModCorr.getText().isEmpty()){
-            lblAvisoCorr1.setText("Campo obligatorio");
-        }else 
-            if(!txtModCorr.getText().contains("@")
-                  ||!txtModCorr.getText().contains(".")){
-                lblAvisoCorr1.setText("Correo NO valido");
-            }else{
-                lblAvisoCorr1.setText("");
-            }
-        if(txtModCont.getText().isEmpty()){
-            lblAvisoCont1.setText("Campo obligatorio");
-        }else{
-            lblAvisoCont1.setText("");
+        if (txtCamRedesS.getText().isEmpty()) {
+            lblAvisoRsCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoRsCam.setText("");
         }
     }
-    public void validarVacios2(){
-        if(txtBajID.getText().isEmpty()){
+
+    public void validarVacios2() {
+        if (txtBajID.getText().isEmpty()) {
             lblAvisoID2.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID2.setText("");
         }
     }
@@ -1338,32 +1335,30 @@ public class DlgArtistas extends javax.swing.JDialog {
         }
     }
     
-    public void habilitarBoton(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtAltDur.getText().isEmpty()){
+    public void habilitarBoton() {
+        if (txtAltIDA.getText().isEmpty()
+                || txtAltNom.getText().isEmpty()
+                || txtAltSegu.getText().isEmpty()
+                || txtAltDisc.getText().isEmpty()
+                || txtAltRedesS.getText().isEmpty()) {
             btnAgregar.setEnabled(false);
-        }else{
+        } else {
             btnAgregar.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonM(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtModCont.getText().isEmpty()){
+
+    public void habilitarBotonM() {
+        if (txtAltIDA.getText().isEmpty()
+                || txtAltNom.getText().isEmpty()
+                || txtAltSegu.getText().isEmpty()
+                || txtAltDisc.getText().isEmpty()
+                || txtAltRedesS.getText().isEmpty()) {
             btnModif.setEnabled(false);
-        }else{
+        } else {
             btnModif.setEnabled(true);
         }
     }
-    
+
     public void habilitarBotonE(){
         if(txtBajID.getText().isEmpty()){
             btnBuscarE.setEnabled(false);
@@ -1379,8 +1374,8 @@ public class DlgArtistas extends javax.swing.JDialog {
             btnBuscar.setEnabled(true);
         }
     }
-    */
-    /*public void validarCaracter(java.awt.event.KeyEvent evento){
+    
+    public void validarCaracter(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
                 || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
                 || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
@@ -1390,31 +1385,19 @@ public class DlgArtistas extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
         }
     }
-    private void insertarCliente(String emailCliente, String passwordCliente, String rsCliente, String rfcCLiente, String domicilioCliente, String cdfiCliente){
-        /*INSERT
-        1.- Crear una instancia del objeto DAOclientes
-                DAOempleados nuevoEmpleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-                Empleados empleadoI = new Empleados();
-                agregamos cada dato a empleadoI
-                empleadoI.setRsCliente("");
-                //o un constructor que inicialice todo
-        3.- Una vez que se llenan los datos para el objeto empleadoI, ejecutar
-                nuevoEmpleado.insert(empleadoI); //Devulve un entero si se aplico el INSERT, exactamente un 1 porque
-                                        //esa es la cantidad de registros que inserto
-        */
-        
-        /*DAOclientes nuevoCliente = new DAOclientes();
-        Clientes cliente = new Clientes(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);
+    private void insertarArtista(String idArtista, String nombreArtista, String seguidoresArtista, String discografiaArtista, String redesArtista){
+   
+        DAOartistas nuevoArtista = new DAOartistas();
+        Artistas artista = new Artistas(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
         try {
-            if(nuevoCliente.insert(cliente) != 0)
-                JOptionPane.showMessageDialog(this,"Cliente dado de alta con exito");
+            if(nuevoArtista.insert(artista) != 0)
+                JOptionPane.showMessageDialog(this,"Artista dado de alta con exito");
             else
-                JOptionPane.showMessageDialog(this,"El cliente no pudo ser dado de alta");
+                JOptionPane.showMessageDialog(this,"El artista no pudo ser dado de alta");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -1439,17 +1422,20 @@ public class DlgArtistas extends javax.swing.JDialog {
     private javax.swing.JLabel lblAltRFC;
     private javax.swing.JLabel lblAvisoDisc;
     private javax.swing.JLabel lblAvisoDisc1;
-    private javax.swing.JLabel lblAvisoDur;
+    private javax.swing.JLabel lblAvisoDiscCam;
     private javax.swing.JLabel lblAvisoID2;
     private javax.swing.JLabel lblAvisoID3;
     private javax.swing.JLabel lblAvisoIDA;
     private javax.swing.JLabel lblAvisoIDAr1;
-    private javax.swing.JLabel lblAvisoIDC2;
+    private javax.swing.JLabel lblAvisoIDartCam;
+    private javax.swing.JLabel lblAvisoNomCam;
     private javax.swing.JLabel lblAvisoNombre;
     private javax.swing.JLabel lblAvisoNombre1;
-    private javax.swing.JLabel lblAvisoRFC2;
     private javax.swing.JLabel lblAvisoRS;
     private javax.swing.JLabel lblAvisoRS1;
+    private javax.swing.JLabel lblAvisoRsCam;
+    private javax.swing.JLabel lblAvisoSeg;
+    private javax.swing.JLabel lblAvisoSegCam;
     private javax.swing.JLabel lblAvisoSeguidores1;
     private javax.swing.JLabel lblBajID;
     private javax.swing.JLabel lblCamDis;
@@ -1469,11 +1455,11 @@ public class DlgArtistas extends javax.swing.JDialog {
     private javax.swing.JPanel pnlReportes;
     private javax.swing.JTable tblClienteC;
     private javax.swing.JTable tblClienteE;
-    private javax.swing.JTextField txtAltCorrC;
-    private javax.swing.JTextField txtAltIDC;
-    private javax.swing.JTextField txtAltOy;
-    private javax.swing.JTextField txtAltRFCC;
+    private javax.swing.JTextField txtAltDisc;
+    private javax.swing.JTextField txtAltIDA;
+    private javax.swing.JTextField txtAltNom;
     private javax.swing.JTextArea txtAltRedesS;
+    private javax.swing.JTextField txtAltSegu;
     private javax.swing.JTextField txtBajID;
     private javax.swing.JTextField txtCamDisc;
     private javax.swing.JTextField txtCamIDAr;
@@ -1486,30 +1472,26 @@ public class DlgArtistas extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
     private int idEliminar = 0, idModificar = 0,empleadoModID = 0, idBuscar = 0;
 
-    //private void agrgarElementosModif(Object[] clienteM) {
+    private void agrgarElementosModif(Object[] clienteM) {
 //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-       /* txtModCorr.setText(clienteM[1].toString());
-        txtModCont.setText(clienteM[2].toString());
-        txtModRaz.setText(clienteM[3].toString());
-        txtModRFC.setText(clienteM[4].toString());
-        txtModDom.setText(clienteM[5].toString());
-//        txtModCont.setText(empleadoM[6].toString());        
-    }*/
-    
-   /* private void habilitarCompMod(){
-        txtModCorr.setEditable(true);
-        txtModCont.setEditable(true);
-        txtModRaz.setEditable(true);
-        txtModRFC.setEditable(true);
-        txtModDom.setEditable(true);
-//        txtModCont.setEditable(true);
+        txtCamNom.setText(clienteM[1].toString());
+        txtCamSeg.setText(clienteM[2].toString());
+        txtCamDisc.setText(clienteM[3].toString());
+        txtCamRedesS.setText(clienteM[4].toString());
+
     }
-    private void deshabilitarCompMod(){
-        txtModCorr.setEditable(false);
-        txtModCont.setEditable(false);
-        txtModRaz.setEditable(false);
-        txtModRFC.setEditable(false);
-        txtModDom.setEditable(false);
-//        txtModCont.setEditable(true);
-    }*/
+
+    private void habilitarCompMod() {
+        txtCamNom.setEditable(true);
+        txtCamSeg.setEditable(true);
+        txtCamDisc.setEditable(true);
+        txtCamRedesS.setEditable(true);
+    }
+
+    private void deshabilitarCompMod() {
+        txtCamNom.setEditable(false);
+        txtCamSeg.setEditable(false);
+        txtCamDisc.setEditable(false);
+        txtCamRedesS.setEditable(false);
+    }
 }

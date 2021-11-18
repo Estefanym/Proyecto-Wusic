@@ -58,11 +58,12 @@ public class DlgGeneros extends javax.swing.JDialog {
         btnAgregar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         txtAltIDG = new javax.swing.JTextField();
-        txtAltRFCC = new javax.swing.JTextField();
+        txtAltNom = new javax.swing.JTextField();
         txtAltOy = new javax.swing.JTextField();
         pnlAv = new javax.swing.JPanel();
         lblAvisoIdGen = new javax.swing.JLabel();
         lblAvisoNombre = new javax.swing.JLabel();
+        lblAvisoOy = new javax.swing.JLabel();
         lblAltOy = new javax.swing.JLabel();
         pnlBajas = new javax.swing.JPanel();
         lblBajID = new javax.swing.JLabel();
@@ -74,22 +75,19 @@ public class DlgGeneros extends javax.swing.JDialog {
         btnEliminar1 = new javax.swing.JButton();
         pnlCambios = new javax.swing.JPanel();
         btnModif = new javax.swing.JButton();
-        txtModCorr = new javax.swing.JTextField();
-        lblCorr2 = new javax.swing.JLabel();
-        txtModCont = new javax.swing.JTextField();
-        btnBuscarM = new javax.swing.JButton();
         lblIdGen1 = new javax.swing.JLabel();
         lblCamNom = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         txtCamIDG = new javax.swing.JTextField();
         txtCamNom = new javax.swing.JTextField();
-        txtAltDur2 = new javax.swing.JTextField();
-        lblCamOy = new javax.swing.JLabel();
-        lblAvisoRFC2 = new javax.swing.JLabel();
-        lblAvisoIDC2 = new javax.swing.JLabel();
-        pnlAv1 = new javax.swing.JPanel();
+        txtCamNoy = new javax.swing.JTextField();
         lblAvisoIDG1 = new javax.swing.JLabel();
-        lblAvisoNombre1 = new javax.swing.JLabel();
+        lblCamOy = new javax.swing.JLabel();
+        lblAvisoIdGenCam = new javax.swing.JLabel();
+        lblAvisoOyCam = new javax.swing.JLabel();
+        pnlAv1 = new javax.swing.JPanel();
+        lblAvisoNombreCam = new javax.swing.JLabel();
+        btnBuscarM = new javax.swing.JButton();
         pnlConsultas = new javax.swing.JPanel();
         lblConsIdCan = new javax.swing.JLabel();
         txtConIDCan = new javax.swing.JTextField();
@@ -143,13 +141,13 @@ public class DlgGeneros extends javax.swing.JDialog {
             }
         });
 
-        txtAltRFCC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltRFCC.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAltNom.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtAltNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltRFCCKeyReleased(evt);
+                txtAltNomKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltRFCCKeyTyped(evt);
+                txtAltNomKeyTyped(evt);
             }
         });
 
@@ -178,7 +176,7 @@ public class DlgGeneros extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(txtAltOy, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(txtAltIDG, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAltRFCC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAltNom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -188,7 +186,7 @@ public class DlgGeneros extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(txtAltOy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtAltRFCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAltNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -198,6 +196,9 @@ public class DlgGeneros extends javax.swing.JDialog {
         lblAvisoNombre.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoNombre.setForeground(new java.awt.Color(255, 0, 0));
 
+        lblAvisoOy.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoOy.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout pnlAvLayout = new javax.swing.GroupLayout(pnlAv);
         pnlAv.setLayout(pnlAvLayout);
         pnlAvLayout.setHorizontalGroup(
@@ -206,13 +207,16 @@ public class DlgGeneros extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAvisoIdGen, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAvisoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblAvisoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoOy, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlAvLayout.setVerticalGroup(
             pnlAvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAvLayout.createSequentialGroup()
                 .addComponent(lblAvisoIdGen, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAvisoOy, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblAvisoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
@@ -374,45 +378,6 @@ public class DlgGeneros extends javax.swing.JDialog {
             }
         });
 
-        txtModCorr.setEditable(false);
-        txtModCorr.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtModCorr.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtModCorrKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtModCorrKeyTyped(evt);
-            }
-        });
-
-        lblCorr2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblCorr2.setText("Contraseña:");
-
-        txtModCont.setEditable(false);
-        txtModCont.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtModCont.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModContActionPerformed(evt);
-            }
-        });
-        txtModCont.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtModContKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtModContKeyTyped(evt);
-            }
-        });
-
-        btnBuscarM.setBackground(new java.awt.Color(255, 255, 255));
-        btnBuscarM.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btnBuscarM.setText("BUSCAR");
-        btnBuscarM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarMActionPerformed(evt);
-            }
-        });
-
         lblIdGen1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblIdGen1.setText("ID Genero:");
 
@@ -441,21 +406,24 @@ public class DlgGeneros extends javax.swing.JDialog {
             }
         });
 
-        txtAltDur2.setEditable(false);
-        txtAltDur2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtAltDur2.addActionListener(new java.awt.event.ActionListener() {
+        txtCamNoy.setEditable(false);
+        txtCamNoy.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtCamNoy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAltDur2ActionPerformed(evt);
+                txtCamNoyActionPerformed(evt);
             }
         });
-        txtAltDur2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCamNoy.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtAltDur2KeyReleased(evt);
+                txtCamNoyKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAltDur2KeyTyped(evt);
+                txtCamNoyKeyTyped(evt);
             }
         });
+
+        lblAvisoIDG1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoIDG1.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -466,15 +434,19 @@ public class DlgGeneros extends javax.swing.JDialog {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCamNom)
                     .addComponent(txtCamIDG, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(txtAltDur2))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(txtCamNoy))
+                .addGap(18, 18, 18)
+                .addComponent(lblAvisoIDG1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(txtCamIDG, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCamIDG, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoIDG1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addComponent(txtAltDur2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCamNoy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtCamNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -483,37 +455,34 @@ public class DlgGeneros extends javax.swing.JDialog {
         lblCamOy.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCamOy.setText("Oyentes");
 
-        lblAvisoRFC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoRFC2.setForeground(new java.awt.Color(255, 0, 0));
+        lblAvisoIdGenCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoIdGenCam.setForeground(new java.awt.Color(255, 0, 0));
 
-        lblAvisoIDC2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoIDC2.setForeground(new java.awt.Color(255, 0, 0));
-
-        lblAvisoIDG1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoIDG1.setForeground(new java.awt.Color(255, 0, 0));
-
-        lblAvisoNombre1.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoNombre1.setForeground(new java.awt.Color(255, 0, 0));
+        lblAvisoOyCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoOyCam.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout pnlAv1Layout = new javax.swing.GroupLayout(pnlAv1);
         pnlAv1.setLayout(pnlAv1Layout);
         pnlAv1Layout.setHorizontalGroup(
             pnlAv1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAv1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlAv1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAvisoIDG1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAvisoNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 173, Short.MAX_VALUE)
         );
         pnlAv1Layout.setVerticalGroup(
             pnlAv1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAv1Layout.createSequentialGroup()
-                .addComponent(lblAvisoIDG1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(lblAvisoNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 96, Short.MAX_VALUE)
         );
+
+        lblAvisoNombreCam.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        lblAvisoNombreCam.setForeground(new java.awt.Color(255, 0, 0));
+
+        btnBuscarM.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarM.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        btnBuscarM.setText("BUSCAR");
+        btnBuscarM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCambiosLayout = new javax.swing.GroupLayout(pnlCambios);
         pnlCambios.setLayout(pnlCambiosLayout);
@@ -526,69 +495,56 @@ public class DlgGeneros extends javax.swing.JDialog {
                     .addComponent(lblCamNom)
                     .addComponent(lblIdGen1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBuscarM)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(btnModif)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(112, 112, 112)
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblCorr2)
-                                .addGap(48, 48, 48)
-                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(106, 106, 106))
-                            .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addComponent(lblAvisoIdGenCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(btnBuscarM))
+                    .addComponent(lblAvisoOyCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAvisoNombreCam, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCambiosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnModif)
+                .addGap(164, 164, 164))
         );
         pnlCambiosLayout.setVerticalGroup(
             pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCambiosLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(pnlCambiosLayout.createSequentialGroup()
-                            .addComponent(lblIdGen1)
-                            .addGap(18, 18, 18)
-                            .addComponent(lblCamOy)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(lblCamNom)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(pnlCambiosLayout.createSequentialGroup()
-                            .addComponent(pnlAv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGap(58, 58, 58)
-                            .addComponent(btnModif)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlCambiosLayout.createSequentialGroup()
+                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCambiosLayout.createSequentialGroup()
+                                .addComponent(pnlAv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(63, 63, 63))
+                            .addGroup(pnlCambiosLayout.createSequentialGroup()
+                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnBuscarM)
+                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
+                                        .addComponent(lblAvisoIdGenCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblAvisoOyCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblAvisoNombreCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModif)
+                        .addGap(103, 103, 103))
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
                         .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnBuscarM))
-                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addComponent(lblAvisoIDC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblIdGen1)
                                 .addGap(18, 18, 18)
-                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCorr2)
-                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(txtModCont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(47, 47, 47)
-                                .addComponent(lblAvisoRFC2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(132, Short.MAX_VALUE))))
+                                .addComponent(lblCamOy)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblCamNom)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pnlPrincipal.addTab("CAMBIOS", pnlCambios);
@@ -717,73 +673,63 @@ public class DlgGeneros extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTdsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTdsActionPerformed
-        /*Object clienteC[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
-        while (c.getRowCount() > 0){
+        Object generoC[] = new Object[2];
+        DAOgeneros genero = new DAOgeneros();
+        ArrayList<Generos> generos = null;
+        while (c.getRowCount() > 0) {
             c.removeRow(0);
         }
-        if(c.getRowCount() == 0){
+        if (c.getRowCount() == 0) {
             try {
-                clientes = cliente.select();
-                for (Clientes clnt : clientes) {
+                generos = genero.select();
+                for (Generos gen : generos) {
 
-                    clienteC[0] =  clnt.getIdCliente();
-                    clienteC[1] =  clnt.getEmailCliente();
-                    clienteC[2] =  clnt.getPasswordCliente();
-                    clienteC[3] =  clnt.getRsCliente();
-                    clienteC[4] =  clnt.getRfcCLiente();
-                    clienteC[5] =  clnt.getDomicilioCliente();
-                    clienteC[6] =  clnt.getCdfiCliente();
+                    generoC[0] = gen.getId_genero();
+                    generoC[1] = gen.getNo_oyentes();
+                    generoC[2] = gen.getNombre_genero();
 
-                    c.addRow(clienteC);
+                    c.addRow(generoC);
                 }
-            }
-            catch (SQLException ex) {
+            } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");*/
+        txtConIDCan.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        /*boolean encontrado = false;
+        boolean encontrado = false;
         idBuscar = Integer.parseInt(txtConIDCan.getText());
-        Object clienteM[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        Object generoM[] = new Object[2];
+        DAOgeneros genero = new DAOgeneros();
+        ArrayList<Generos> generos = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idBuscar){
+            generos = genero.select();
+            for (Generos gen : generos) {
+                if (gen.getId_genero() == idBuscar) {
 
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
+                    generoM[0] = gen.getId_genero();
+                    generoM[1] = gen.getNo_oyentes();
+                    generoM[2] = gen.getNombre_genero();
 
                     encontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(encontrado){
-            while (c.getRowCount() > 0){
+        if (encontrado) {
+            while (c.getRowCount() > 0) {
                 c.removeRow(0);
             }
-            if(c.getRowCount() == 0)
-            c.addRow(clienteM);
+            if (c.getRowCount() == 0) {
+                c.addRow(generoM);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Genero no encontrado");
         }
-        else{
-            JOptionPane.showMessageDialog(this, "Empleado no encontrado");
-        }*/
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
@@ -796,176 +742,116 @@ public class DlgGeneros extends javax.swing.JDialog {
     }//GEN-LAST:event_txtConIDCanKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
-        /*boolean clienteEncontrado = false;
+        boolean generoEncontrado = false;
         idModificar = Integer.parseInt(txtCamIDG.getText());
-        Object clienteM[] = new Object[13];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
+        Object generoM[] = new Object[2];
+        DAOgeneros genero = new DAOgeneros();
+        ArrayList<Generos> generos = null;
 
         try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getIdCliente() == idModificar){
-                    clienteM[0] =  clnt.getIdCliente();
-                    clienteM[1] =  clnt.getEmailCliente();
-                    clienteM[2] =  clnt.getPasswordCliente();
-                    clienteM[3] =  clnt.getRsCliente();
-                    clienteM[4] =  clnt.getRfcCLiente();
-                    clienteM[5] =  clnt.getDomicilioCliente();
-                    clienteM[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            generos = genero.select();
+            for (Generos gen : generos) {
+                if (gen.getId_genero() == idModificar) {
+                    generoM[0] = gen.getId_genero();
+                    generoM[1] = gen.getNo_oyentes();
+                    generoM[2] = gen.getNombre_genero();
+
+                    generoEncontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-        }
-        if(clienteEncontrado){
-            btnModif.setEnabled(true);
-            habilitarCompMod();
-            agrgarElementosModif(clienteM);
-        }
-        else
-        JOptionPane.showMessageDialog(this, "Empleado no encontrado");*/
-    }//GEN-LAST:event_btnBuscarMActionPerformed
-
-    private void txtModContKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModContKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContKeyTyped
-
-    private void txtModContKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModContKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContKeyReleased
-
-    private void txtModContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModContActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtModContActionPerformed
-
-    private void txtModCorrKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModCorrKeyTyped
-        //validarCorreo(evt);
-    }//GEN-LAST:event_txtModCorrKeyTyped
-
-    private void txtModCorrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModCorrKeyReleased
-        //habilitarBotonM();
-        //validarVacios1();
-    }//GEN-LAST:event_txtModCorrKeyReleased
-
-    private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        /*empleadoModID = Integer.parseInt(txtCamIDG.getText());
-        String clienteModEmail = txtModCorr.getText();
-        String clienteModPass = txtModCont.getText();
-        String clienteModRs = txtModRaz.getText();
-        String clienteModRFC = txtModRFC.getText();
-        String clienteModDom = txtModDom.getText();
-        String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
-
-        /*
-        1.- Crear una instancia del objeto DAOClientes
-        DAOEmpleados empleado = new DAOEmpleados();
-        2.- Creamos un nuevo objeto de tipo Cliente
-        Empleados empleadosU = new Empleados();
-        //Agregamos el ID de la persona que deseamos modificar
-        empleadoU.setIdCliente(1);
-        empleadoU.setRsCliente("RS");
-        //Seteamos los demas parametros
-        3.- Ejecutamos
-        empleado.update(empleadosU);//Devulve un entero si se aplico el UPDATE, exactamente un 1 porque
-        //esa es la cantidad de registros que modifico
-        */
-        /*DAOclientes cliente = new DAOclientes();
-        Clientes clienteU = new Clientes();
-        clienteU.setIdCliente(empleadoModID);
-        clienteU.setEmailCliente(clienteModEmail);
-        clienteU.setPasswordCliente(clienteModPass);
-        clienteU.setRsCliente(clienteModRs);
-        clienteU.setRfcCLiente(clienteModRFC);
-        clienteU.setDomicilioCliente(clienteModDom);
-        clienteU.setCdfiCliente(cliadoModCdfi);
-        try {
-            if(cliente.update(clienteU) != 0){
-                JOptionPane.showMessageDialog(this, "Empleado modificado con exito");
-                deshabilitarCompMod();
-            }
-            else
-            JOptionPane.showMessageDialog(this, "El empleado no se modifico");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }*/
+        }
+        if (generoEncontrado) {
+            btnModif.setEnabled(true);
+            //habilitarCompMod();
+            //agrgarElementosModif(generoM);
+        } else
+            JOptionPane.showMessageDialog(this, "Genero no encontrado");
+    }//GEN-LAST:event_btnBuscarMActionPerformed
+
+    private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
+        //Validar los INT o hacer la conversion del texto a entero.
+        String generoModId_genero = txtCamIDG.getText();
+        String generoModNo_oyentes = txtCamNoy.getText();
+        String generoModNombre_genero = txtCamNom.getText();
+
+
+        DAOgeneros genero = new DAOgeneros();
+        Generos generoU = new Generos();
+        //generoU.setId_genero(generoModId_genero);
+        //generoU.setNo_oyentes(generoModNo_oyentes);
+        generoU.setNombre_genero(generoModNombre_genero);
+
+        try {
+            if (genero.update(generoU) != 0) {
+                JOptionPane.showMessageDialog(this, "Genero modificado con exito");
+                //deshabilitarCompMod();
+            } else {
+                JOptionPane.showMessageDialog(this, "El genero no se modifico");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
     }//GEN-LAST:event_btnModifActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        /*DELETE
-        1.- Crear una instancia del objeto DAOEmpleados
-        DAOempleados empleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-        Empleados empleadoD = new Empleados();
-        3.- Agregamos al objeto persona el ID del empleado a eliminar
-        empleadoD.setIdCliente(1);
-        4.- Ejecutamos
-        empleado.delete(empleadoD);//Devulve un entero si se aplico el DELETE, exactamente un 1 porque
-        //esa es la cantidad de registros que elimino
-        */
-        /*if(idEliminar != 0){
-            DAOclientes cliente = new DAOclientes();
-            Clientes deleteCliente = new Clientes();
-            deleteCliente.setIdCliente(idEliminar);
+
+        if (idEliminar != 0) {
+            DAOgeneros genero = new DAOgeneros();
+            Generos deleteGenero = new Generos();
+            deleteGenero.setId_genero(idEliminar);
             try {
-                if(cliente.delete(deleteCliente) != 0){
-                    JOptionPane.showMessageDialog(this, "Cliente eliminado con exito");
+                if (genero.delete(deleteGenero) != 0) {
+                    JOptionPane.showMessageDialog(this, "Genero eliminado con exito");
                     txtBajID.setText("");
                     txtBajID.removeAll();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el genero");
                 }
-                else
-                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el cliente");
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
-        }*/
+        }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEActionPerformed
-        /*boolean clienteEncontrado = false;
+        boolean generoEncontrado = false;
         idEliminar = Integer.parseInt(txtBajID.getText());
-        Object clienteE[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientess = null;
+        Object generoE[] = new Object[2];
+        DAOgeneros genero = new DAOgeneros();
+        ArrayList<Generos> geneross = null;
 
         try {
-            clientess = cliente.select();
-            for (Clientes clnt : clientess) {
-                if(clnt.getIdCliente()== idEliminar){
-                    clienteE[0] =  clnt.getIdCliente();
-                    clienteE[1] =  clnt.getEmailCliente();
-                    clienteE[2] =  clnt.getPasswordCliente();
-                    clienteE[3] =  clnt.getRsCliente();
-                    clienteE[4] =  clnt.getRfcCLiente();
-                    clienteE[5] =  clnt.getDomicilioCliente();
-                    clienteE[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            geneross = genero.select();
+            for (Generos gen : geneross) {
+                if (gen.getId_genero() == idEliminar) {
+                    generoE[0] = gen.getId_genero();
+                    generoE[1] = gen.getNo_oyentes();
+                    generoE[2] = gen.getNombre_genero();
+                    generoEncontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
         }
-        if(clienteEncontrado){
+        if (generoEncontrado) {
 
-            if(e.getRowCount() == 0){
-                e.addRow(clienteE);
+            if (e.getRowCount() == 0) {
+                e.addRow(generoE);
                 btnEliminar1.setEnabled(true);
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Genero no encontrado");
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Cliente no encontrado");
-        }*/
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
@@ -978,32 +864,29 @@ public class DlgGeneros extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        /*String emailCliente = txtAltCorrC.getText();
-        String passwordCliente = txtAltDur.getText();
-        String rsCliente = txtAltRaz.getText();
-        String rfcCLiente = txtAltRFCC.getText();
-        String domicilioCliente = txtAltDom.getText();
-        String cdfiCliente = CmbBxAltCFDICli.getSelectedItem().toString();
+       String generoModId_genero = txtAltIDG.getText();
+        String generoModNo_oyentes = txtAltOy.getText();
+        String generoModNombre_genero = txtAltNom.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
 
-        insertarCliente(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);*/
+        //insertarGenero(generoModId_genero,generoModNo_oyentes,generoModNombre_genero);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void txtAltRFCCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltRFCCKeyTyped
+    private void txtAltNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyTyped
        // validarRFC(evt);
-    }//GEN-LAST:event_txtAltRFCCKeyTyped
+    }//GEN-LAST:event_txtAltNomKeyTyped
 
-    private void txtAltRFCCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltRFCCKeyReleased
+    private void txtAltNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyReleased
        /* habilitarBoton();
         validarVacios();*/
-    }//GEN-LAST:event_txtAltRFCCKeyReleased
+    }//GEN-LAST:event_txtAltNomKeyReleased
 
      private void txtAltIDGKeyReleased(java.awt.event.KeyEvent evt) {                                   
        // validarNumeros(evt);
-    }  
+    }
     private void txtAltIDGKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDGKeyTyped
-       // validarNumeros(evt);
+        // validarNumeros(evt);
     }//GEN-LAST:event_txtAltIDGKeyTyped
 
 //GEN-FIRST:event_txtAltIDCKeyReleased
@@ -1038,41 +921,37 @@ public class DlgGeneros extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCamNomKeyTyped
 
-    private void txtAltDur2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltDur2ActionPerformed
+    private void txtCamNoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCamNoyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltDur2ActionPerformed
+    }//GEN-LAST:event_txtCamNoyActionPerformed
 
-    private void txtAltDur2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDur2KeyReleased
+    private void txtCamNoyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamNoyKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltDur2KeyReleased
+    }//GEN-LAST:event_txtCamNoyKeyReleased
 
-    private void txtAltDur2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDur2KeyTyped
+    private void txtCamNoyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamNoyKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAltDur2KeyTyped
+    }//GEN-LAST:event_txtCamNoyKeyTyped
 
    
-     /*public void validarVacios(){
-        if(txtAltIDC.getText().isEmpty()){
-            lblAvisoIDC.setText("Campo obligatorio");
-        }else{
-            lblAvisoIDC.setText("");
-        }
-        if(txtAltRaz.getText().isEmpty()){
+     public void validarVacios() {
+        if (txtAltIDG.getText().isEmpty()) {
             lblAvisoIdGen.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoIdGen.setText("");
         }
-        if(txtAltRFCC.getText().isEmpty()){
-            lblAvisoRFC.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC.setText("");
+        if (lblAvisoOy.getText().isEmpty()) {
+            lblAvisoOy.setText("Campo obligatorio");
+        } else {
+            lblAvisoOy.setText("");
         }
-        if(txtAltDom.getText().isEmpty()){
-            lblAvisoDom.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom.setText("");
+        if (txtAltNom.getText().isEmpty()) {
+            lblAvisoNombre.setText("Campo obligatorio");
+        } else {
+            lblAvisoNombre.setText("");
         }
-        if(txtAltCorrC.getText().isEmpty()){
+
+        /*if(txtAltCorrC.getText().isEmpty()){
             lblAvisoCorr.setText("Campo obligatorio");
         }else 
             if(!txtAltCorrC.getText().contains("@")
@@ -1080,49 +959,26 @@ public class DlgGeneros extends javax.swing.JDialog {
                 lblAvisoCorr.setText("Correo NO valido");
             }else{
                 lblAvisoCorr.setText("");
-            }
-        if(txtAltDur.getText().isEmpty()){
-            lblAvisoNombre.setText("Campo obligatorio");
-        }else{
-            lblAvisoNombre.setText("");
-        }
+            }*/
     }
-     
-     public void validarVacios1(){
-        if(txtCamIDG.getText().isEmpty()){
-            lblAvisoIDC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoIDC1.setText("");
+
+    public void validarVacios1() {
+        if (txtCamIDG.getText().isEmpty()) {
+            lblAvisoIdGenCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoIdGenCam.setText("");
         }
-        if(txtModRaz.getText().isEmpty()){
-            lblAvisoRaz1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRaz1.setText("");
+        if (txtCamNoy.getText().isEmpty()) {
+            lblAvisoOyCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoOyCam.setText("");
         }
-        if(txtModRFC.getText().isEmpty()){
-            lblAvisoRFC1.setText("Campo obligatorio");
-        }else{
-            lblAvisoRFC1.setText("");
+        if (txtCamNom.getText().isEmpty()) {
+            lblAvisoNombreCam.setText("Campo obligatorio");
+        } else {
+            lblAvisoNombreCam.setText("");
         }
-        if(txtModDom.getText().isEmpty()){
-            lblAvisoDom1.setText("Campo obligatorio");
-        }else{
-            lblAvisoDom1.setText("");
-        }
-        if(txtModCorr.getText().isEmpty()){
-            lblAvisoCorr1.setText("Campo obligatorio");
-        }else 
-            if(!txtModCorr.getText().contains("@")
-                  ||!txtModCorr.getText().contains(".")){
-                lblAvisoCorr1.setText("Correo NO valido");
-            }else{
-                lblAvisoCorr1.setText("");
-            }
-        if(txtModCont.getText().isEmpty()){
-            lblAvisoCont1.setText("Campo obligatorio");
-        }else{
-            lblAvisoCont1.setText("");
-        }
+
     }
     public void validarVacios2(){
         if(txtBajID.getText().isEmpty()){
@@ -1152,7 +1008,7 @@ public class DlgGeneros extends javax.swing.JDialog {
         }
     }
     
-    public void validarRFC(java.awt.event.KeyEvent evento){
+    public void validarID(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=47
                 || evento.getKeyChar()>=58 && evento.getKeyChar()<=64
                 || evento.getKeyChar()>=91 && evento.getKeyChar()<=255){
@@ -1181,50 +1037,44 @@ public class DlgGeneros extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
         }
     }
-    
-    public void habilitarBoton(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtAltDur.getText().isEmpty()){
+
+    public void habilitarBoton() {
+        if (txtAltIDG.getText().isEmpty()
+                || txtAltOy.getText().isEmpty()
+                || txtAltNom.getText().isEmpty()) {
             btnAgregar.setEnabled(false);
-        }else{
+        } else {
             btnAgregar.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonM(){
-        if(txtAltIDC.getText().isEmpty() 
-                || txtAltRaz.getText().isEmpty() 
-                || txtAltRFCC.getText().isEmpty() 
-                || txtAltDom.getText().isEmpty() 
-                || txtAltCorrC.getText().isEmpty()
-                || txtModCont.getText().isEmpty()){
+
+    public void habilitarBotonM() {
+        if (txtAltIDG.getText().isEmpty()
+                || txtAltOy.getText().isEmpty()
+                || txtAltNom.getText().isEmpty()) {
             btnModif.setEnabled(false);
-        }else{
+        } else {
             btnModif.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonE(){
-        if(txtBajID.getText().isEmpty()){
+
+    public void habilitarBotonE() {
+        if (txtBajID.getText().isEmpty()) {
             btnBuscarE.setEnabled(false);
-        }else{
+        } else {
             btnBuscarE.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonB(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void habilitarBotonB() {
+        if (txtConIDCan.getText().isEmpty()) {
             btnBuscar.setEnabled(false);
-        }else{
+        } else {
             btnBuscar.setEnabled(true);
         }
     }
-    */
-    /*public void validarCaracter(java.awt.event.KeyEvent evento){
+    
+    public void validarCaracter(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
                 || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
                 || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
@@ -1234,27 +1084,17 @@ public class DlgGeneros extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
         }
     }
-    private void insertarCliente(String emailCliente, String passwordCliente, String rsCliente, String rfcCLiente, String domicilioCliente, String cdfiCliente){
-        /*INSERT
-        1.- Crear una instancia del objeto DAOclientes
-                DAOempleados nuevoEmpleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-                Empleados empleadoI = new Empleados();
-                agregamos cada dato a empleadoI
-                empleadoI.setRsCliente("");
-                //o un constructor que inicialice todo
-        3.- Una vez que se llenan los datos para el objeto empleadoI, ejecutar
-                nuevoEmpleado.insert(empleadoI); //Devulve un entero si se aplico el INSERT, exactamente un 1 porque
-                                        //esa es la cantidad de registros que inserto
-        */
-        
-        /*DAOclientes nuevoCliente = new DAOclientes();
-        Clientes cliente = new Clientes(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);
+
+    /*private void insertarGenero(String generoModId_genero, String generoModNo_oyentes, String generoModNombre_genero) {
+
+        DAOgeneros nuevoGenero = new DAOgeneros();
+        Generos genero = new Generos(generoModId_genero, generoModNo_oyentes, generoModNombre_genero);
         try {
-            if(nuevoCliente.insert(cliente) != 0)
-                JOptionPane.showMessageDialog(this,"Cliente dado de alta con exito");
-            else
-                JOptionPane.showMessageDialog(this,"El cliente no pudo ser dado de alta");
+            if (nuevoGenero.insert(genero) != 0) {
+                JOptionPane.showMessageDialog(this, "Genero dado de alta con exito");
+            } else {
+                JOptionPane.showMessageDialog(this, "El genero no pudo ser dado de alta");
+            }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
@@ -1277,22 +1117,34 @@ public class DlgGeneros extends javax.swing.JDialog {
     private javax.swing.JLabel lblAltRFC;
     private javax.swing.JLabel lblAvisoID2;
     private javax.swing.JLabel lblAvisoID3;
-    private javax.swing.JLabel lblAvisoIDC2;
     private javax.swing.JLabel lblAvisoIDG1;
     private javax.swing.JLabel lblAvisoIdGen;
+    private javax.swing.JLabel lblAvisoIdGen1;
+    private javax.swing.JLabel lblAvisoIdGen2;
+    private javax.swing.JLabel lblAvisoIdGen3;
+    private javax.swing.JLabel lblAvisoIdGenCam;
     private javax.swing.JLabel lblAvisoNombre;
-    private javax.swing.JLabel lblAvisoNombre1;
-    private javax.swing.JLabel lblAvisoRFC2;
+    private javax.swing.JLabel lblAvisoNombre2;
+    private javax.swing.JLabel lblAvisoNombre3;
+    private javax.swing.JLabel lblAvisoNombre4;
+    private javax.swing.JLabel lblAvisoNombreCam;
+    private javax.swing.JLabel lblAvisoOy;
+    private javax.swing.JLabel lblAvisoOy1;
+    private javax.swing.JLabel lblAvisoOy2;
+    private javax.swing.JLabel lblAvisoOy3;
+    private javax.swing.JLabel lblAvisoOyCam;
     private javax.swing.JLabel lblBajID;
     private javax.swing.JLabel lblCamNom;
     private javax.swing.JLabel lblCamOy;
     private javax.swing.JLabel lblConsIdCan;
-    private javax.swing.JLabel lblCorr2;
     private javax.swing.JLabel lblIdGen;
     private javax.swing.JLabel lblIdGen1;
     private javax.swing.JPanel pnlAltas;
     private javax.swing.JPanel pnlAv;
     private javax.swing.JPanel pnlAv1;
+    private javax.swing.JPanel pnlAv2;
+    private javax.swing.JPanel pnlAv3;
+    private javax.swing.JPanel pnlAv4;
     private javax.swing.JPanel pnlBajas;
     private javax.swing.JPanel pnlCambios;
     private javax.swing.JPanel pnlConsultas;
@@ -1300,43 +1152,30 @@ public class DlgGeneros extends javax.swing.JDialog {
     private javax.swing.JPanel pnlReportes;
     private javax.swing.JTable tblClienteC;
     private javax.swing.JTable tblClienteE;
-    private javax.swing.JTextField txtAltDur2;
     private javax.swing.JTextField txtAltIDG;
+    private javax.swing.JTextField txtAltNom;
     private javax.swing.JTextField txtAltOy;
-    private javax.swing.JTextField txtAltRFCC;
     private javax.swing.JTextField txtBajID;
     private javax.swing.JTextField txtCamIDG;
     private javax.swing.JTextField txtCamNom;
+    private javax.swing.JTextField txtCamNoy;
     private javax.swing.JTextField txtConIDCan;
-    private javax.swing.JTextField txtModCont;
-    private javax.swing.JTextField txtModCorr;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0,empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, empleadoModID = 0, idBuscar = 0;
 
-    //private void agrgarElementosModif(Object[] clienteM) {
+    private void agrgarElementosModif(Object[] generoM) {
 //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-       /* txtModCorr.setText(clienteM[1].toString());
-        txtModCont.setText(clienteM[2].toString());
-        txtModRaz.setText(clienteM[3].toString());
-        txtModRFC.setText(clienteM[4].toString());
-        txtModDom.setText(clienteM[5].toString());
-//        txtModCont.setText(empleadoM[6].toString());        
-    }*/
-    
-   /* private void habilitarCompMod(){
-        txtModCorr.setEditable(true);
-        txtModCont.setEditable(true);
-        txtModRaz.setEditable(true);
-        txtModRFC.setEditable(true);
-        txtModDom.setEditable(true);
-//        txtModCont.setEditable(true);
+        txtCamNoy.setText(generoM[1].toString());
+        txtCamNom.setText(generoM[2].toString());
     }
-    private void deshabilitarCompMod(){
-        txtModCorr.setEditable(false);
-        txtModCont.setEditable(false);
-        txtModRaz.setEditable(false);
-        txtModRFC.setEditable(false);
-        txtModDom.setEditable(false);
-//        txtModCont.setEditable(true);
-    }*/
+
+    private void habilitarCompMod() {
+        txtCamNoy.setEditable(true);
+        txtCamNom.setEditable(true);
+    }
+
+    private void deshabilitarCompMod() {
+        txtCamNoy.setEditable(false);
+        txtCamNom.setEditable(false);
+    }
 }
