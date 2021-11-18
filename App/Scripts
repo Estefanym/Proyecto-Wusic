@@ -1,0 +1,21 @@
+CREATE TABLE canciones(
+id_cacnion INT PRIMARY KEY,
+id_genero INT FOREIGN KEY,
+nombre VARCHAR(30),
+explicita VARCHAR(2) CHECK("SI","NO"),
+duracion_cancion SMALLINT,
+oyentes INT,
+estatus_legal VARCHAR(9) CHECK("FREEUSE","COPYRIGHT"),
+discografia VARCHAR(40)); 
+
+CREATE TABLE canciones_artistas(
+id_ca INT PRIMARY KEY,
+id_cancion INT FOREIGN KEY,
+id_artista INT FOREIGN KEY);
+
+CREATE TABLE artistas(
+id_artista INT PRIMARY KEY,
+nombre_artista VARCHAR(30),
+seguidores_artista INT,
+discografia VARCHAR(30),
+redes_sociales TEXT);
