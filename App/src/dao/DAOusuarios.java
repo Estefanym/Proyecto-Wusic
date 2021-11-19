@@ -17,10 +17,10 @@ import model.Usuarios;
  * @author lolyc
  */
 public class DAOusuarios {
-    private static final String SQL_UPDATE = "UPDATE usuarios SET id_plan=?,nombre=?,email=?,password=?, telefono=?, no_seguidores=? WHERE id_usuario=?";
-    private static final String SQL_INSERT = "INSERT INTO usuarios (id_plan,nombre,email,password,telefono,no_seguidores) VALUES(?, ?,? , ?, ?,?)";
-    private static final String SQL_SELECT = "SELECT * FROM usuarios";
-    private static final String SQL_DELETE = "DELETE FROM usuarios WHERE id_usuario=?";
+    private static final String SQL_UPDATE = "UPDATE hr.usuarios SET id_plan=?,nombre=?,email=?,password=?, telefono=?, no_seguidores=? WHERE id_usuario=?";
+    private static final String SQL_INSERT = "INSERT INTO hr.usuarios (id_plan,nombre,email,password,telefono,no_seguidores) VALUES(?, ?,? , ?, ?,?)";
+    private static final String SQL_SELECT = "SELECT * FROM hr.usuarios";
+    private static final String SQL_DELETE = "DELETE FROM hr.usuarios WHERE id_usuario=?";
     
     private static Connection conn;
     private static PreparedStatement stmt;

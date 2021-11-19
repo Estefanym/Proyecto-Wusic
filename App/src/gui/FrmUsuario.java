@@ -5,20 +5,30 @@
  */
 package gui;
 
+import dao.DAOalbums;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
+import model.Albums;
 
 /**
  *
  * @author lolyc
  */
 public class FrmUsuario extends javax.swing.JFrame {
+    DefaultTableModel e,c;
+    public FrmUsuario(java.awt.Frame parent, boolean modal) {
+        e = (DefaultTableModel)tblAlbumB.getModel();
+    }
      public class Imagen extends javax.swing.JPanel {
     public String ruta;
         public Imagen(String ruta,int width,int height) {
@@ -79,7 +89,11 @@ public class FrmUsuario extends javax.swing.JFrame {
         ImageIcon icbi=new ImageIcon(getClass().getResource("/Imagenes/biblioteca.png"));
         Icon iconobi=new ImageIcon(icbi.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
         btnBiblioteca.setIcon(iconobi);
-        btnBiblioteca.setBorder(new FrmUsuario.RoundedBorder(5)); 
+        btnBiblioteca.setBorder(new FrmUsuario.RoundedBorder(5));
+        ImageIcon icbus=new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
+        Icon iconobus=new ImageIcon(icbus.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
+        btnBGenero.setIcon(iconog);
+        btnBGenero.setBorder(new FrmUsuario.RoundedBorder(5)); 
         FrmUsuario.Imagen Imagen = new FrmUsuario.Imagen("src/Imagenes/cuenta.png",250,250);
         lblUsuario.add(Imagen, BorderLayout.CENTER);
         lblUsuario.repaint();
@@ -110,6 +124,12 @@ public class FrmUsuario extends javax.swing.JFrame {
         btnBGenero = new javax.swing.JButton();
         btnBiblioteca = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblAlbumB = new javax.swing.JTable();
+        lblNombreB = new javax.swing.JLabel();
+        txtNombreB = new javax.swing.JTextField();
+        btnBus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("WUSIC");
@@ -137,7 +157,6 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jToolBar1.setBackground(new java.awt.Color(0, 0, 0));
         jToolBar1.setFloatable(false);
-        jToolBar1.setForeground(null);
         jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jToolBar1.setRollover(true);
 
@@ -157,6 +176,11 @@ public class FrmUsuario extends javax.swing.JFrame {
         btnBAlbum.setFocusable(false);
         btnBAlbum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnBAlbum.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBAlbum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBAlbumActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnBAlbum);
 
         btnBCancion.setBackground(new java.awt.Color(0, 0, 0));
@@ -196,7 +220,6 @@ public class FrmUsuario extends javax.swing.JFrame {
         jToolBar1.add(btnBiblioteca);
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setForeground(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -234,6 +257,62 @@ public class FrmUsuario extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setForeground(new java.awt.Color(240, 240, 240));
+
+        tblAlbumB.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_cancion", "id_genero", "nombre", "explicita", "duracion_cancion", "num_oyentes", "estatus_legal", "discografia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tblAlbumB);
+
+        lblNombreB.setBackground(new java.awt.Color(0, 0, 0));
+        lblNombreB.setForeground(new java.awt.Color(240, 240, 240));
+        lblNombreB.setText("Nombre");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(lblNombreB, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(txtNombreB, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBus, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreB, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBus, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                .addGap(70, 70, 70))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -243,7 +322,9 @@ public class FrmUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(445, 445, 445))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,6 +337,7 @@ public class FrmUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 11, Short.MAX_VALUE))))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,6 +353,46 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBAlbumActionPerformed
+       boolean encontrado = false;
+        /*idBuscar = Integer.parseInt(txtConIDCan.getText());
+        Object albumM[] = new Object[7];
+        DAOalbums album = new DAOalbums();
+        ArrayList<Albums> albums = null;
+
+        try {
+            albums = album.select();
+            for (Albums albu : albums) {
+                if(albu.getId_album() == idBuscar){
+
+                    albumM[0] =  albu.getId_album();
+                    albumM[1] =  albu.getId_artista();
+                    albumM[2] =  albu.getNombre();
+                    albumM[3] =  albu.getFecha_estreno();
+                    albumM[4] =  albu.getExplicita();
+                    albumM[5] =  albu.getNum_Oyentes();
+                    albumM[6] =  albu.getDiscografia();
+
+                    encontrado = true;
+                    break;
+                }
+            }
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+        if(encontrado){
+            while (c.getRowCount() > 0){
+                c.removeRow(0);
+            }
+            if(c.getRowCount() == 0)
+            c.addRow(albumM);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Album no encontrado");
+        }*/
+    }//GEN-LAST:event_btnBAlbumActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,13 +435,19 @@ public class FrmUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnBCancion;
     private javax.swing.JButton btnBGenero;
     private javax.swing.JButton btnBiblioteca;
+    private javax.swing.JButton btnBus;
     private javax.swing.JButton btnCuenta;
     private javax.swing.JButton btnInicio;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel lblNombreB;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JTable tblAlbumB;
+    private javax.swing.JTextField txtNombreB;
     // End of variables declaration//GEN-END:variables
 }

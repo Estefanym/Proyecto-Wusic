@@ -86,14 +86,13 @@ public class DAOcanciones {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
             
-            stmt.setInt(1, cancion.getId_cancion());
-            stmt.setInt(2, cancion.getId_genero());
-            stmt.setString(3, cancion.getNombre());
-            stmt.setString(4, cancion.getExplicita());
-            stmt.setInt(5, cancion.getDuracion_cancion());
-            stmt.setInt(6, cancion.getNum_Oyentes());
-            stmt.setString(7, cancion.getEstatus_legal());
-            stmt.setString(8, cancion.getDiscografia());
+            stmt.setInt(1, cancion.getId_genero());
+            stmt.setString(2, cancion.getNombre());
+            stmt.setString(3, cancion.getExplicita());
+            stmt.setInt(4, cancion.getDuracion_cancion());
+            stmt.setInt(5, cancion.getNum_Oyentes());
+            stmt.setString(6, cancion.getEstatus_legal());
+            stmt.setString(7, cancion.getDiscografia());
             
             rows = stmt.executeUpdate();
             

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
+import dao.DAOusuarios;
+import model.Usuarios;
 
 public class FrmISE extends javax.swing.JFrame {
     private javax.swing.JFrame frm;
@@ -53,6 +55,7 @@ public class FrmISE extends javax.swing.JFrame {
         btnIngresar.setBorder(new FrmISE.RoundedBorder(5)); 
         btnRegistrar.setBorder(new FrmISE.RoundedBorder(5)); 
         
+            
         setLocationRelativeTo(null);
         this.setResizable(false);
         
@@ -62,14 +65,18 @@ public class FrmISE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btngrpRol = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        btnUsuario = new javax.swing.JRadioButton();
+        btnAdmin = new javax.swing.JRadioButton();
         lblUsuario = new javax.swing.JLabel();
         lblContraseña = new javax.swing.JLabel();
-        pswUsuario = new javax.swing.JPasswordField();
-        txtUsuario = new javax.swing.JTextField();
+        pswPassword = new javax.swing.JPasswordField();
+        txtCorreo = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
+        lblRol = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO DE SESION");
@@ -78,6 +85,16 @@ public class FrmISE extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INICIO DE SESIÓN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 24), new java.awt.Color(221, 198, 164))); // NOI18N
+
+        btnUsuario.setBackground(new java.awt.Color(0, 0, 0));
+        btngrpRol.add(btnUsuario);
+        btnUsuario.setForeground(new java.awt.Color(240, 240, 240));
+        btnUsuario.setText("Usuario");
+
+        btnAdmin.setBackground(new java.awt.Color(0, 0, 0));
+        btngrpRol.add(btnAdmin);
+        btnAdmin.setForeground(new java.awt.Color(240, 240, 240));
+        btnAdmin.setText("Administrador");
 
         lblUsuario.setBackground(new java.awt.Color(0, 0, 0));
         lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -89,13 +106,13 @@ public class FrmISE extends javax.swing.JFrame {
         lblContraseña.setForeground(new java.awt.Color(255, 255, 255));
         lblContraseña.setText("Contraseña");
 
-        pswUsuario.setBackground(new java.awt.Color(0, 0, 0));
-        pswUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        pswUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        pswPassword.setBackground(new java.awt.Color(0, 0, 0));
+        pswPassword.setForeground(new java.awt.Color(255, 255, 255));
+        pswPassword.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
 
-        txtUsuario.setBackground(new java.awt.Color(0, 0, 0));
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtCorreo.setBackground(new java.awt.Color(0, 0, 0));
+        txtCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        txtCorreo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
 
         btnIngresar.setBackground(new java.awt.Color(0, 0, 0));
         btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -119,39 +136,58 @@ public class FrmISE extends javax.swing.JFrame {
             }
         });
 
+        lblRol.setBackground(new java.awt.Color(0, 0, 0));
+        lblRol.setForeground(new java.awt.Color(240, 240, 240));
+        lblRol.setText("Rol");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblContraseña)
-                    .addComponent(lblUsuario))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblUsuario)
+                    .addComponent(lblRol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtUsuario)
-                    .addComponent(btnIngresar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pswUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnAdmin)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnUsuario))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtCorreo)
+                        .addComponent(pswPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsuario))
-                .addGap(45, 45, 45)
+                    .addComponent(btnAdmin)
+                    .addComponent(btnUsuario)
+                    .addComponent(lblRol))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pswUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblContraseña))
+                    .addComponent(lblUsuario)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblContraseña)
+                    .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -188,26 +224,31 @@ public class FrmISE extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-       new FrmPrincipal().setVisible(true);
-       new FrmUsuario().setVisible(true);
-        /* if(empleadoExiste(txtUsuario.getText(), pswUsuario.getText())){
+       //new FrmPrincipal().setVisible(true);
+       //new FrmUsuario().setVisible(true);
+       
+       if(btnAdmin.isSelected()){
             frm = new FrmPrincipal();
             frm.setVisible(true);
             this.setVisible(false);
-            txtUsuario.setText("");
-            pswUsuario.setText("");
-            this.user = "";
+            boolean validarUsuario = false;
+            if(txtCorreo.getText().equals("wusic@oficial.com") && pswPassword.getPassword().equals("postgres")){
+                    validarUsuario = true;
+            }     
+        }else{
+            if(usuarioExiste(txtCorreo.getText(), pswPassword.getPassword().toString())){
+                frm = new FrmUsuario();
+                frm.setVisible(true);
+                this.setVisible(false);
+                txtCorreo.setText("");
+                pswPassword.setText("");
+                this.user = "";
+            }else{
+                 JOptionPane.showMessageDialog(this, "Error. Usuario o contraseña incorrectos");
+            }
         }
-        else if(usuarioExiste(txtUsuario.getText(), pswUsuario.getText())){
-            frm = new FrmPrincipal();
-            frm.setVisible(true);
-            this.setVisible(false);
-            this.user = "";
-            txtUsuario.setText("");
-            pswUsuario.setText("");
-        }
-        else
-            JOptionPane.showMessageDialog(this, "Error. Usuario o contraseña incorrectos");*/
+        
+        
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
@@ -216,26 +257,29 @@ public class FrmISE extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton btnAdmin;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JRadioButton btnUsuario;
+    private javax.swing.ButtonGroup btngrpRol;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblContraseña;
+    private javax.swing.JLabel lblRol;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPasswordField pswUsuario;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JPasswordField pswPassword;
+    private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables
-   /* public boolean empleadoExiste(String email, String password) {
+   public boolean usuarioExiste(String email, String password) {
         boolean validarUsuario = false;
-        DAOempleados empleado = new DAOempleados();
-        ArrayList<Empleados> empleados = null;
+        DAOusuarios usuario = new DAOusuarios();
+        ArrayList<Usuarios> usuarios = null;
         
             try {
-                empleados = empleado.select();
-                for (Empleados emp : empleados) {
-                    if(emp.getEmailEmpleado().equals(email) && emp.getPasswordEmpleado().equals(password)){
-                        this.user = emp.getRolEmpleado();
-                        this.id = emp.getIdEmpleado();
+                usuarios = usuario.select();
+                for (Usuarios usr : usuarios) {
+                    if(usr.getEmail().equals(email) && usr.getPassword().equals(password)){
+                        this.id = usr.getId_usuario();
                         validarUsuario = true;
                         break;
                     }
@@ -248,27 +292,5 @@ public class FrmISE extends javax.swing.JFrame {
         return validarUsuario;
     }
     
-    public boolean usuarioExiste(String email, String paswword){
-        boolean validarUsuario = false;
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientes = null;
-        
-        try {
-            clientes = cliente.select();
-            for (Clientes clnt : clientes) {
-                if(clnt.getEmailCliente().equals(email) && clnt.getPasswordCliente().equals(paswword)){
-                    validarUsuario = true;
-                    this.user = "Cliente";
-                    this.id = clnt.getIdCliente();
-                    break;
-                }
-            }
-        }
-        catch (SQLException ex) {
-            ex.printStackTrace(System.out);
-            JOptionPane.showMessageDialog(this, "Error. Usuario o contraseña incorrectos");
-        }
-       
-        return validarUsuario;
-    }*/
+    
 }

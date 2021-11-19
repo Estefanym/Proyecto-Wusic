@@ -18,10 +18,10 @@ import model.Albums;
  * @author lolyc
  */
 public class DAOalbums {
-    private static final String SQL_UPDATE = "UPDATE albums SET id_artista=?,nombre=?,fecha_estreno=?,explicita=?, num_oyentes=?, discografia=? WHERE id_album=?";
-    private static final String SQL_INSERT = "INSERT INTO albums (id_artista,nombre,fecha_estreno,explicita,num_oyentes,discografia) VALUES(?, ?,? , ?, ?)";
-    private static final String SQL_SELECT = "SELECT * FROM albums";
-    private static final String SQL_DELETE = "DELETE FROM albums WHERE id_album=?";
+    private static final String SQL_UPDATE = "UPDATE hr.albums SET id_artista=?,nombre=?,fecha_estreno=?,explicita=?, num_oyentes=?, discografia=? WHERE id_album=?";
+    private static final String SQL_INSERT = "INSERT INTO hr.albums (id_artista,nombre,fecha_estreno,explicita,num_oyentes,discografia) VALUES(?, ?,? , ?, ?)";
+    private static final String SQL_SELECT = "SELECT * FROM hr.albums";
+    private static final String SQL_DELETE = "DELETE FROM hr.albums WHERE id_album=?";
     
     private static Connection conn;
     private static PreparedStatement stmt;

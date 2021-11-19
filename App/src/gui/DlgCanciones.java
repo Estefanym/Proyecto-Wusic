@@ -170,7 +170,6 @@ public class DlgCanciones extends javax.swing.JDialog {
         lblCorr1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCorr1.setText("Discografia");
 
-        txtAltIDC.setEditable(false);
         txtAltIDC.setText("0");
         txtAltIDC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtAltIDC.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -235,7 +234,6 @@ public class DlgCanciones extends javax.swing.JDialog {
             }
         });
 
-        txtAltOy.setEditable(false);
         txtAltOy.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtAltOy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -918,8 +916,8 @@ public class DlgCanciones extends javax.swing.JDialog {
                     .addComponent(btnBuscar)
                     .addComponent(btnBuscarTds))
                 .addGap(39, 39, 39)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pnlPrincipal.addTab("CONSULTAS", pnlConsultas);
@@ -1165,7 +1163,7 @@ public class DlgCanciones extends javax.swing.JDialog {
                     cancionE[4] =  cnc.getDuracion_cancion();
                     cancionE[5] =  cnc.getNum_Oyentes();
                     cancionE[6] =  cnc.getEstatus_legal();
-                    cancionE[6] =  cnc.getDiscografia();
+                    cancionE[7] =  cnc.getDiscografia();
                     cancionEncontrada = true;
                     break;
                 }
@@ -1217,11 +1215,7 @@ public class DlgCanciones extends javax.swing.JDialog {
         String nombre = txtAltNombre.getText();
         String explicita = cmbAltExp.getSelectedItem().toString();
         int duracion =Integer.parseInt(txtAltDur.getText());
-        Random random = new Random();
-        double aux = (double)(Math.random());
-        
-        txtAltOy.setText(String.valueOf(aux));
-        int num_oyentes=(int)aux;
+        int num_oyentes=Integer.parseInt(txtAltOy.getText());
         String estatuslegal = cmbAltEL.getSelectedItem().toString();
         String discografia = txtAltDisc.getText();
 
@@ -1603,7 +1597,8 @@ public class DlgCanciones extends javax.swing.JDialog {
     private int idEliminar = 0, idModificar = 0,cancionModID = 0, idBuscar = 0;
     private void agregarElementosModif(Object[] cancionM) {
 //       id_cancion,id_genero,nombre,explicita,duracion_cancion,num_oyentes,estatus_legal,discografia
-       txtCamIDC.setText(cancionM[1].toString());
+       txtCamIDC.setText(cancionM[0].toString());
+        txtCamIDG.setText(cancionM[1].toString());
         txtCamNom.setText(cancionM[2].toString());
         cmbCamEx.setSelectedItem(cancionM[3].toString());
         txtCamDur.setText(cancionM[4].toString());
