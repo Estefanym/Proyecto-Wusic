@@ -6,6 +6,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,10 +20,10 @@ import idao.ItfCanciones;
  * @author lolyc
  */
 public class DAOcanciones {
-    private static final String SQL_UPDATE = "UPDATE canciones SET id_genero=?,nombre=?,explicita=?,duracion_cancion=?, num_oyentes=?, estatus_legal=?, discografia=? WHERE id_cancion=?";
-    private static final String SQL_INSERT = "INSERT INTO canciones (id_genero,nombre,explicita,duracion_cancion, num_oyentes, estatus_legal, discografia) VALUES(?, ?,? , ?, ?,?,?)";
-    private static final String SQL_SELECT = "SELECT * FROM canciones";
-    private static final String SQL_DELETE = "DELETE FROM canciones WHERE id_canciones=?";
+    private static final String SQL_UPDATE = "UPDATE hr.canciones SET id_genero=?,nombre=?,explicita=?,duracion_cancion=?, num_oyentes=?, estatus_legal=?, discografia=? WHERE id_cancion=?";
+    private static final String SQL_INSERT = "INSERT INTO hr.canciones (id_genero,nombre,explicita,duracion_cancion, num_oyentes, estatus_legal, discografia) VALUES(?, ?,? , ?, ?,?,?)";
+    private static final String SQL_SELECT = "SELECT * FROM hr.canciones";
+    private static final String SQL_DELETE = "DELETE FROM hr.canciones WHERE id_canciones=?";
     
     private static Connection conn;
     private static PreparedStatement stmt;
@@ -115,14 +117,15 @@ public class DAOcanciones {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_UPDATE);
             
-             stmt.setInt(1, cancion.getId_cancion());
-            stmt.setInt(2, cancion.getId_genero());
-            stmt.setString(3, cancion.getNombre());
-            stmt.setString(4, cancion.getExplicita());
-            stmt.setInt(5, cancion.getDuracion_cancion());
-            stmt.setInt(6, cancion.getNum_Oyentes());
-            stmt.setString(7, cancion.getEstatus_legal());
-            stmt.setString(8, cancion.getDiscografia());
+            
+            stmt.setInt(1, cancion.getId_genero());
+            stmt.setString(2, cancion.getNombre());
+            stmt.setString(3, cancion.getExplicita());
+            stmt.setInt(4, cancion.getDuracion_cancion());
+            stmt.setInt(5, cancion.getNum_Oyentes());
+            stmt.setString(6, cancion.getEstatus_legal());
+            stmt.setString(7, cancion.getDiscografia());
+             stmt.setInt(8, cancion.getId_cancion());
             
             rows = stmt.executeUpdate();
             

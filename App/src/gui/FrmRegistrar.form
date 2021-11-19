@@ -74,7 +74,6 @@
                                   <Component id="jLabel4" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lblRfc" min="-2" pref="91" max="-2" attributes="0"/>
                               <Component id="lblPlan" min="-2" pref="91" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="53" max="32767" attributes="0"/>
@@ -109,9 +108,7 @@
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="lblRfc" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="lblPlan" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -192,17 +189,6 @@
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblRfc">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="RFC"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="btnRegistrar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -237,7 +223,6 @@
                           <Component id="txtCorreo" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="txtApM" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="txtApP" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
-                          <Component id="txtRFC" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="pswContraseña" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                           <Component id="cmbPlan" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -265,11 +250,9 @@
                       <Component id="pswContraseña" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txtTelefono" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txtRFC" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="cmbPlan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -372,21 +355,6 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCorreoKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtRFC">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="2" left="0" right="0" top="0">
-                      <Color PropertyName="color" blue="a4" green="c6" red="dd" type="rgb"/>
-                    </MatteColorBorder>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRFCKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRFCKeyTyped"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JComboBox" name="cmbPlan">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -448,7 +416,6 @@
                           <Component id="lblAvisoApeM" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="lblAvisoTel" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="lblAvisoCorreo" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                          <Component id="lblAvisoRfc" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="lblAvisoApeP" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                           <Component id="lblAvisoNombre" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                       </Group>
@@ -471,8 +438,6 @@
                       <Component id="lblAvisoContraseña" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblAvisoTel" min="-2" pref="20" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="lblAvisoRfc" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -530,16 +495,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblAvisoCorreo">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="10" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblAvisoRfc">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="10" style="1"/>

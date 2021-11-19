@@ -82,7 +82,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        lblRfc = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         pswContraseña = new javax.swing.JPasswordField();
@@ -91,7 +90,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
         txtApM = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        txtRFC = new javax.swing.JTextField();
         cmbPlan = new javax.swing.JComboBox<>();
         btnRegresar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -101,7 +99,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
         lblAvisoApeP = new javax.swing.JLabel();
         lblAvisoTel = new javax.swing.JLabel();
         lblAvisoCorreo = new javax.swing.JLabel();
-        lblAvisoRfc = new javax.swing.JLabel();
         lblPlan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -133,10 +130,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contraseña");
-
-        lblRfc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblRfc.setForeground(new java.awt.Color(255, 255, 255));
-        lblRfc.setText("RFC");
 
         btnRegistrar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegistrar.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
@@ -206,16 +199,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
             }
         });
 
-        txtRFC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtRFC.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtRFCKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtRFCKeyTyped(evt);
-            }
-        });
-
         cmbPlan.setBackground(new java.awt.Color(0, 0, 0));
         cmbPlan.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         cmbPlan.setForeground(new java.awt.Color(255, 255, 255));
@@ -232,7 +215,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApM, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApP, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRFC, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -255,11 +237,9 @@ public class FrmRegistrar extends javax.swing.JFrame {
                 .addComponent(pswContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtRFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addComponent(cmbPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
@@ -298,9 +278,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
         lblAvisoCorreo.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoCorreo.setForeground(new java.awt.Color(255, 0, 0));
 
-        lblAvisoRfc.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        lblAvisoRfc.setForeground(new java.awt.Color(255, 0, 0));
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -312,7 +289,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
                     .addComponent(lblAvisoApeM, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvisoTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvisoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAvisoRfc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvisoApeP, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAvisoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -332,8 +308,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
                 .addComponent(lblAvisoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblAvisoTel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(lblAvisoRfc, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -364,7 +338,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblRfc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -393,9 +366,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblRfc)
-                        .addGap(26, 26, 26)
+                        .addGap(34, 34, 34)
                         .addComponent(lblPlan)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -469,14 +440,6 @@ public class FrmRegistrar extends javax.swing.JFrame {
     private void pswContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswContraseñaKeyTyped
         validarContraseña(evt);
     }//GEN-LAST:event_pswContraseñaKeyTyped
-
-    private void txtRFCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRFCKeyReleased
-        validarVacios();
-    }//GEN-LAST:event_txtRFCKeyReleased
-
-    private void txtRFCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRFCKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRFCKeyTyped
     
     /**
      * @param args the command line arguments
@@ -544,11 +507,7 @@ public class FrmRegistrar extends javax.swing.JFrame {
         }else{
             lblAvisoContraseña.setText("");
         }
-        if(txtRFC.getText().equals("")){
-            lblAvisoRfc.setText("Campo obligatorio");
-        }else{
-            lblAvisoRfc.setText("");
-        }
+        
     }
     public void validarCaracter(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
@@ -610,16 +569,13 @@ public class FrmRegistrar extends javax.swing.JFrame {
     private javax.swing.JLabel lblAvisoContraseña;
     private javax.swing.JLabel lblAvisoCorreo;
     private javax.swing.JLabel lblAvisoNombre;
-    private javax.swing.JLabel lblAvisoRfc;
     private javax.swing.JLabel lblAvisoTel;
     private javax.swing.JLabel lblPlan;
-    private javax.swing.JLabel lblRfc;
     private javax.swing.JPasswordField pswContraseña;
     private javax.swing.JTextField txtApM;
     private javax.swing.JTextField txtApP;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtRFC;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -954,7 +954,7 @@ public class DlgUsuarios extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarTdsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTdsActionPerformed
-        /*Object clienteC[] = new Object[7];
+        /*Object artistasC[] = new Object[7];
         DAOclientes cliente = new DAOclientes();
         ArrayList<Clientes> clientes = null;
         while (c.getRowCount() > 0){

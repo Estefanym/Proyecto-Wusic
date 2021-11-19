@@ -867,11 +867,11 @@ public class DlgCanciones extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_cancion", "id_genero", "nombre", "explicita", "duracion_cancion", "num_oyentes", "estatus_legal", "discografia"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1018,23 +1018,23 @@ public class DlgCanciones extends javax.swing.JDialog {
                     c.addRow(cancionM);
             }
             else{
-                JOptionPane.showMessageDialog(this, "Empleado no encontrado");
+                JOptionPane.showMessageDialog(this, "Cancion no encontrada");
             }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtConIDCanKeyTyped
 
     private void txtConIDCanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyReleased
-        //habilitarBotonB();
-        //validarVacios3();
+        habilitarBotonB();
+        validarVacios3();
     }//GEN-LAST:event_txtConIDCanKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
-         boolean clienteEncontrado = false;
+         boolean cancionEncontrada = false;
         idModificar = Integer.parseInt(txtCamIDC.getText());
-        Object cancionM[] = new Object[13];
+        Object cancionM[] = new Object[8];
         DAOcanciones cancion = new DAOcanciones();
         ArrayList<Canciones> canciones = null;
         
@@ -1050,7 +1050,7 @@ public class DlgCanciones extends javax.swing.JDialog {
                         cancionM[5] =  cnc.getNum_Oyentes();
                         cancionM[6] =  cnc.getEstatus_legal();
                         cancionM[7] =  cnc.getDiscografia();
-                        clienteEncontrado = true;
+                        cancionEncontrada = true;
                         break;
                     }
                 }
@@ -1058,23 +1058,24 @@ public class DlgCanciones extends javax.swing.JDialog {
             catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
-            if(clienteEncontrado){
+            if(cancionEncontrada){
                     btnModif.setEnabled(true);
-                    //habilitarCompMod();
-                    //agregarElementosModif(cancionM);
+                    habilitarCompMod();
+                    agregarElementosModif(cancionM);
             }
             else
-                JOptionPane.showMessageDialog(this, "Empleado no encontrado");
+                JOptionPane.showMessageDialog(this, "Cancion no encontrada");
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        /*empleadoModID = Integer.parseInt(txtCamIDG.getText());
-        String clienteModEmail = txtModCorr.getText();
-        String clienteModPass = txtModCont.getText();
-        String clienteModRs = txtModRaz.getText();
-        String clienteModRFC = txtModRFC.getText();
-        String clienteModDom = txtModDom.getText();
-        String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
+        cancionModID = Integer.parseInt(txtCamIDC.getText());
+        int cancionCamIG = Integer.parseInt(txtCamIDG.getText());
+        String cancionNombre = txtCamNom.getText();
+        String cancionExp = cmbCamEx.getSelectedItem().toString();
+        int cancionDur = Integer.parseInt(txtCamDur.getText());
+        int cancionNumO = Integer.parseInt(txtCamOy.getText());
+        String cancionEL = cmbCamEL.getSelectedItem().toString();
+        String cancionDisc = txtCamDisc.getText();
 
         /*
         1.- Crear una instancia del objeto DAOClientes
@@ -1089,25 +1090,27 @@ public class DlgCanciones extends javax.swing.JDialog {
         empleado.update(empleadosU);//Devulve un entero si se aplico el UPDATE, exactamente un 1 porque
         //esa es la cantidad de registros que modifico
         */
-        /*DAOclientes cliente = new DAOclientes();
-        Clientes clienteU = new Clientes();
-        clienteU.setIdCliente(empleadoModID);
-        clienteU.setEmailCliente(clienteModEmail);
-        clienteU.setPasswordCliente(clienteModPass);
-        clienteU.setRsCliente(clienteModRs);
-        clienteU.setRfcCLiente(clienteModRFC);
-        clienteU.setDomicilioCliente(clienteModDom);
-        clienteU.setCdfiCliente(cliadoModCdfi);
+        DAOcanciones cancion = new DAOcanciones();
+        Canciones cancionU = new Canciones();
+        cancionU.setId_cancion(cancionModID);
+        cancionU.setId_genero(cancionCamIG);
+        cancionU.setNombre(cancionNombre);
+        cancionU.setExplicita(cancionExp);
+        cancionU.setDuracion_cancion(cancionDur);
+        cancionU.setNum_Oyentes(cancionNumO);
+        cancionU.setEstatus_legal(cancionEL);
+        cancionU.setDiscografia(cancionDisc);
+        
         try {
-            if(cliente.update(clienteU) != 0){
-                JOptionPane.showMessageDialog(this, "Empleado modificado con exito");
+            if(cancion.update(cancionU) != 0){
+                JOptionPane.showMessageDialog(this, "Cancion modificada con exito");
                 deshabilitarCompMod();
             }
             else
-            JOptionPane.showMessageDialog(this, "El empleado no se modifico");
+            JOptionPane.showMessageDialog(this, "La canción no se modifico");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }*/
+        }
     }//GEN-LAST:event_btnModifActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
@@ -1122,46 +1125,48 @@ public class DlgCanciones extends javax.swing.JDialog {
         empleado.delete(empleadoD);//Devulve un entero si se aplico el DELETE, exactamente un 1 porque
         //esa es la cantidad de registros que elimino
         */
-        /*if(idEliminar != 0){
-            DAOclientes cliente = new DAOclientes();
-            Clientes deleteCliente = new Clientes();
-            deleteCliente.setIdCliente(idEliminar);
+        if(idEliminar != 0){
+            DAOcanciones cancion = new DAOcanciones();
+            Canciones deleteCancion = new Canciones();
+            deleteCancion.setId_cancion(idEliminar);
             try {
-                if(cliente.delete(deleteCliente) != 0){
-                    JOptionPane.showMessageDialog(this, "Cliente eliminado con exito");
+                if(cancion.delete(deleteCancion) != 0){
+                    JOptionPane.showMessageDialog(this, "Cancion eliminada con exito");
                     txtBajID.setText("");
                     txtBajID.removeAll();
                 }
                 else
-                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el cliente");
+                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el cancion");
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
         while (e.getRowCount() > 0){
             e.removeRow(0);
-        }*/
+        }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEActionPerformed
-        /*boolean clienteEncontrado = false;
+         boolean cancionEncontrada = false;
         idEliminar = Integer.parseInt(txtBajID.getText());
-        Object clienteE[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientess = null;
+        Object cancionE[] = new Object[8];
+        DAOcanciones cancion = new DAOcanciones();
+        ArrayList<Canciones> cancioness = null;
+        
 
         try {
-            clientess = cliente.select();
-            for (Clientes clnt : clientess) {
-                if(clnt.getIdCliente()== idEliminar){
-                    clienteE[0] =  clnt.getIdCliente();
-                    clienteE[1] =  clnt.getEmailCliente();
-                    clienteE[2] =  clnt.getPasswordCliente();
-                    clienteE[3] =  clnt.getRsCliente();
-                    clienteE[4] =  clnt.getRfcCLiente();
-                    clienteE[5] =  clnt.getDomicilioCliente();
-                    clienteE[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            cancioness = cancion.select();
+            for (Canciones cnc : cancioness) {
+                if(cnc.getId_cancion()== idEliminar){
+                    cancionE[0] =  cnc.getId_cancion();
+                    cancionE[1] =  cnc.getId_genero();
+                    cancionE[2] =  cnc.getNombre();
+                    cancionE[3] =  cnc.getExplicita();
+                    cancionE[4] =  cnc.getDuracion_cancion();
+                    cancionE[5] =  cnc.getNum_Oyentes();
+                    cancionE[6] =  cnc.getEstatus_legal();
+                    cancionE[6] =  cnc.getDiscografia();
+                    cancionEncontrada = true;
                     break;
                 }
             }
@@ -1172,16 +1177,16 @@ public class DlgCanciones extends javax.swing.JDialog {
         while (e.getRowCount() > 0){
             e.removeRow(0);
         }
-        if(clienteEncontrado){
+        if(cancionEncontrada){
 
             if(e.getRowCount() == 0){
-                e.addRow(clienteE);
+                e.addRow(cancionE);
                 btnEliminar1.setEnabled(true);
             }
         }
         else{
-            JOptionPane.showMessageDialog(this,"Cliente no encontrado");
-        }*/
+            JOptionPane.showMessageDialog(this,"Cancion no encontrada");
+        }
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
@@ -1596,7 +1601,7 @@ public class DlgCanciones extends javax.swing.JDialog {
     private javax.swing.JTextField txtConIDCan;
     // End of variables declaration//GEN-END:variables
     private int idEliminar = 0, idModificar = 0,cancionModID = 0, idBuscar = 0;
-    private void agrgarElementosModif(Object[] cancionM) {
+    private void agregarElementosModif(Object[] cancionM) {
 //       id_cancion,id_genero,nombre,explicita,duracion_cancion,num_oyentes,estatus_legal,discografia
        txtCamIDC.setText(cancionM[1].toString());
         txtCamNom.setText(cancionM[2].toString());
@@ -1607,20 +1612,22 @@ public class DlgCanciones extends javax.swing.JDialog {
         txtCamDisc.setText(cancionM[7].toString());       
     }
     
-   /*private void habilitarCompMod(){
-        txtModCorr.setEditable(true);
-        txtModCont.setEditable(true);
-        txtModRaz.setEditable(true);
-        txtModRFC.setEditable(true);
-        txtModDom.setEditable(true);
-        txtModCont.setEditable(true);
+   private void habilitarCompMod(){
+        txtCamIDC.setEditable(true);
+        txtCamNom.setEditable(true);
+        cmbCamEx.setEditable(true);
+        txtCamDur.setEditable(true);
+        txtCamOy.setEditable(true);
+        cmbCamEL.setEditable(true);
+        txtCamDisc.setEditable(true);
     }
     private void deshabilitarCompMod(){
-        txtModCorr.setEditable(false);
-        txtModCont.setEditable(false);
-        txtModRaz.setEditable(false);
-        txtModRFC.setEditable(false);
-        txtModDom.setEditable(false);
-        txtModCont.setEditable(true);
-    }*/
+        txtCamIDC.setEditable(true);
+        txtCamNom.setEditable(true);
+        cmbCamEx.setEditable(true);
+        txtCamDur.setEditable(true);
+        txtCamOy.setEditable(true);
+        cmbCamEL.setEditable(true);
+        txtCamDisc.setEditable(true);
+    }
 }

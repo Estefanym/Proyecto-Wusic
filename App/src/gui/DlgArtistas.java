@@ -1156,7 +1156,7 @@ public class DlgArtistas extends javax.swing.JDialog {
         validarVacios();*/
     }//GEN-LAST:event_txtAltNomKeyReleased
 
-     private void txtAltIDCKeyReleased(java.awt.event.KeyEvent evt) {                                   
+     private void txtAltIDAKeyReleased(java.awt.event.KeyEvent evt) {                                   
        // validarNumeros(evt);
     }  
     private void txtAltIDAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDAKeyTyped
@@ -1214,8 +1214,20 @@ public class DlgArtistas extends javax.swing.JDialog {
     private void txtCamDiscKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamDiscKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCamDiscKeyTyped
-
-   
+    private void txtAltSeguKeyReleased(java.awt.event.KeyEvent evt){
+        
+    }
+    
+    private void txtAltSeguActionPerformed(java.awt.event.ActionEvent evt){
+        
+    }
+    
+    private void  txtAltSeguKeyTyped(java.awt.event.KeyEvent evt){
+        
+    }
+    
+    
+    
      public void validarVacios(){
         if(txtAltIDA.getText().isEmpty()){ //id_artista
             lblAvisoIDA.setText("Campo obligatorio");
@@ -1388,7 +1400,7 @@ public class DlgArtistas extends javax.swing.JDialog {
     private void insertarArtista(String idArtista, String nombreArtista, String seguidoresArtista, String discografiaArtista, String redesArtista){
    
         DAOartistas nuevoArtista = new DAOartistas();
-        Artistas artista = new Artistas(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
+        /*Artistas artista = new Artistas(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
         try {
             if(nuevoArtista.insert(artista) != 0)
                 JOptionPane.showMessageDialog(this,"Artista dado de alta con exito");
@@ -1396,7 +1408,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(this,"El artista no pudo ser dado de alta");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }
+        }*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
