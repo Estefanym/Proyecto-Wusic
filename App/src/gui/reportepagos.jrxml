@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="27b6e180-a7b9-4324-b684-a278439040fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT hr.pagos.id_usuario, hr.pagos.costo, hr.pagos.metodo_pago, hr.pagos.fecha_facturacion, hr.pagos.detalle_pago, hr.usuarios.nombre_usuario FROM hr.pagos INNER JOIN hr.usuarios ON hr.pagos.id_usuario =17 AND hr.usuarios.id_usuario=17 GROUP BY hr.pagos.id_usuario,hr.pagos.costo, hr.pagos.metodo_pago, hr.pagos.fecha_facturacion, hr.pagos.detalle_pago, hr.usuarios.nombre_usuario;]]>
+	</queryString>
+	<field name="id_usuario" class="java.lang.Integer"/>
+	<field name="costo" class="java.lang.Float"/>
+	<field name="metodo_pago" class="java.lang.String"/>
+	<field name="fecha_facturacion" class="java.sql.Date"/>
+	<field name="detalle_pago" class="java.lang.String"/>
+	<field name="nombre_usuario" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="237" y="27" width="117" height="20" uuid="9a824367-fe12-41a5-ba71-88e26875d909"/>
+				<text><![CDATA[FACTURA DE PAGOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="479" y="0" width="93" height="79" uuid="ac14fe6a-63c4-43fd-8e76-8aa8f53b6981"/>
+				<imageExpression><![CDATA["C:\\Users\\lolyc\\Documents\\GitHub\\Proyecto-Wusic\\App\\src\\Imagenes\\Logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="237" y="0" width="100" height="20" uuid="c0e9be6a-7267-41c7-93d5-31ca8f1d4583"/>
+				<textFieldExpression><![CDATA[$F{fecha_facturacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="0" width="100" height="20" uuid="9cd69fab-305a-4bfc-bb21-a1431ef02052"/>
+				<textFieldExpression><![CDATA[$F{nombre_usuario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="19" width="100" height="20" uuid="708a130c-d693-461f-af6e-25f96b2f9eeb"/>
+				<textFieldExpression><![CDATA[$F{id_usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="19" width="100" height="20" uuid="5a1b9e08-d816-4698-92d4-9be5acf96b27"/>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="19" width="100" height="20" uuid="4e77a699-b3ff-4844-b59a-59500d6734b7"/>
+				<textFieldExpression><![CDATA[$F{metodo_pago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="21" width="100" height="20" uuid="dc38de3a-2ce2-40c8-ba17-a58402c8f0ae"/>
+				<textFieldExpression><![CDATA[$F{detalle_pago}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="154" y="21" width="100" height="20" uuid="f72eea87-0d11-4b9c-aeb9-ea621cd38a98"/>
+				<text><![CDATA[detalle_pago]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<componentElement>
+				<reportElement x="199" y="4" width="200" height="50" uuid="1bd7c8a6-dd2a-4db7-a8a0-4b663e81ae61"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA["1234"]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
