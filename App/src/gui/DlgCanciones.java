@@ -86,9 +86,9 @@ public class DlgCanciones extends javax.swing.JDialog {
         txtBajID = new javax.swing.JTextField();
         btnBuscarE = new javax.swing.JButton();
         lblAvisoID2 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tblClienteE = new javax.swing.JTable();
         btnEliminar1 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblClienteE = new javax.swing.JTable();
         pnlCambios = new javax.swing.JPanel();
         btnModif = new javax.swing.JButton();
         btnBuscarM = new javax.swing.JButton();
@@ -449,24 +449,6 @@ public class DlgCanciones extends javax.swing.JDialog {
         lblAvisoID2.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         lblAvisoID2.setForeground(new java.awt.Color(255, 0, 0));
 
-        tblClienteE.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(tblClienteE);
-
         btnEliminar1.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEliminar1.setText("ELIMINAR");
@@ -477,31 +459,48 @@ public class DlgCanciones extends javax.swing.JDialog {
             }
         });
 
+        tblClienteE.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "id_cancion", "id_genero", "nombre", "explicita", "duracion_cancion", "num_oyentes", "estatus_legal", "discografia"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(tblClienteE);
+
         javax.swing.GroupLayout pnlBajasLayout = new javax.swing.GroupLayout(pnlBajas);
         pnlBajas.setLayout(pnlBajasLayout);
         pnlBajasLayout.setHorizontalGroup(
             pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBajasLayout.createSequentialGroup()
                 .addGroup(pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBajasLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminar1))
                     .addGroup(pnlBajasLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(lblBajID)
-                        .addGap(46, 46, 46)
                         .addGroup(pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarE)
                             .addGroup(pnlBajasLayout.createSequentialGroup()
-                                .addComponent(txtBajID, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblAvisoID2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(pnlBajasLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(13, Short.MAX_VALUE))
-            .addGroup(pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlBajasLayout.createSequentialGroup()
-                    .addGap(323, 323, 323)
-                    .addComponent(btnEliminar1)
-                    .addContainerGap(149, Short.MAX_VALUE)))
+                                .addGap(52, 52, 52)
+                                .addComponent(lblBajID)
+                                .addGap(46, 46, 46)
+                                .addGroup(pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnBuscarE)
+                                    .addGroup(pnlBajasLayout.createSequentialGroup()
+                                        .addComponent(txtBajID, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblAvisoID2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 1, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         pnlBajasLayout.setVerticalGroup(
             pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -517,14 +516,11 @@ public class DlgCanciones extends javax.swing.JDialog {
                     .addGroup(pnlBajasLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(lblAvisoID2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(60, 60, 60)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
-            .addGroup(pnlBajasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBajasLayout.createSequentialGroup()
-                    .addContainerGap(287, Short.MAX_VALUE)
-                    .addComponent(btnEliminar1)
-                    .addGap(56, 56, 56)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(btnEliminar1)
+                .addGap(23, 23, 23))
         );
 
         pnlPrincipal.addTab("BAJAS", pnlBajas);
@@ -1533,8 +1529,8 @@ public class DlgCanciones extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lblAltDur;
     private javax.swing.JLabel lblAltExp;
     private javax.swing.JLabel lblAltIDCli;
