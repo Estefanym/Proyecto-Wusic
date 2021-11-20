@@ -262,11 +262,11 @@ public class DlgCategorias extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_genero", "no_oyentes"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -538,11 +538,11 @@ public class DlgCategorias extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_genero", "no_oyentes"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

@@ -376,11 +376,11 @@ public class DlgArtistas extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_artista", "nombre_artista", "seguidores_artista", "discografia", "Title 5"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -789,7 +789,7 @@ public class DlgArtistas extends javax.swing.JDialog {
 
             },
             new String [] {
-                "id_artista", "nombre_artista", "seguidores_artista", "discografia", "RFC"
+                "id_artista", "nombre_artista", "seguidores_artista", "discografia", "redes_sociales"
             }
         ) {
             boolean[] canEdit = new boolean [] {

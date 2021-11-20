@@ -441,7 +441,7 @@ public class DlgAlbums extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_album", "id_artista", "nombre", "fecha_estreno", "explicita", "num_oyentes", "discografia"
             }
         ) {
             boolean[] canEdit = new boolean [] {
