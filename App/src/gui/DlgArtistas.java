@@ -162,7 +162,6 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblCorr1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCorr1.setText("Discografia");
 
-        txtAltIDA.setEditable(false);
         txtAltIDA.setText("0");
         txtAltIDA.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtAltIDA.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -512,7 +511,6 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblCamNom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCamNom.setText("Nombre");
 
-        txtCamIDAr.setEditable(false);
         txtCamIDAr.setText("0");
         txtCamIDAr.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtCamIDAr.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -701,9 +699,9 @@ public class DlgArtistas extends javax.swing.JDialog {
                                     .addComponent(lblAltIDCli1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBuscarM)
-                        .addGap(18, 18, 18)
+                        .addGap(130, 130, 130)
                         .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblCorr2)
@@ -732,14 +730,15 @@ public class DlgArtistas extends javax.swing.JDialog {
                                 .addComponent(lblCamDis)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblCamEL))
-                            .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pnlAv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlCambiosLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(btnBuscarM)))
                         .addGap(18, 18, 18)
                         .addComponent(btnModif))
                     .addGroup(pnlCambiosLayout.createSequentialGroup()
-                        .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarM))
-                        .addGap(85, 85, 85)
+                        .addComponent(txtModCorr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90)
                         .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCorr2)
                             .addGroup(pnlCambiosLayout.createSequentialGroup()

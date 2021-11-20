@@ -126,7 +126,6 @@ public class DlgCategorias extends javax.swing.JDialog {
             }
         });
 
-        txtAltIDCat.setEditable(false);
         txtAltIDCat.setText("0");
         txtAltIDCat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtAltIDCat.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -360,7 +359,6 @@ public class DlgCategorias extends javax.swing.JDialog {
         lblCamNom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCamNom.setText("Tipo de Contenido");
 
-        txtCamIDC.setEditable(false);
         txtCamIDC.setText("0");
         txtCamIDC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtCamIDC.addKeyListener(new java.awt.event.KeyAdapter() {

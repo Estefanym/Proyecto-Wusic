@@ -235,17 +235,15 @@ public class FrmISE extends javax.swing.JFrame {
             if(txtCorreo.getText().equals("wusic@oficial.com") && pswPassword.getPassword().equals("postgres")){
                     validarUsuario = true;
             }     
-        }else{
-            if(usuarioExiste(txtCorreo.getText(), pswPassword.getPassword().toString())){
-                frm = new FrmUsuario();
-                frm.setVisible(true);
-                this.setVisible(false);
-                txtCorreo.setText("");
-                pswPassword.setText("");
-                this.user = "";
-            }else{
-                 JOptionPane.showMessageDialog(this, "Error. Usuario o contraseña incorrectos");
-            }
+        }
+        if(btnUsuario.isSelected()){
+            frm = new FrmUsuario();
+            frm.setVisible(true);
+            this.setVisible(false);
+            boolean validarUsuario = false;
+            if(txtCorreo.getText().equals("margaritop@hotmail.com") && pswPassword.getPassword().equals("postgres")){
+                    validarUsuario = true;
+            }     
         }
         
         
@@ -270,27 +268,7 @@ public class FrmISE extends javax.swing.JFrame {
     private javax.swing.JPasswordField pswPassword;
     private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables
-   public boolean usuarioExiste(String email, String password) {
-        boolean validarUsuario = false;
-        DAOusuarios usuario = new DAOusuarios();
-        ArrayList<Usuarios> usuarios = null;
-        
-            try {
-                usuarios = usuario.select();
-                for (Usuarios usr : usuarios) {
-                    if(usr.getEmail().equals(email) && usr.getPassword().equals(password)){
-                        this.id = usr.getId_usuario();
-                        validarUsuario = true;
-                        break;
-                    }
-                }
-            }
-            catch (SQLException ex) {
-                ex.printStackTrace(System.out);
-            }
-            
-        return validarUsuario;
-    }
+   
     
     
 }

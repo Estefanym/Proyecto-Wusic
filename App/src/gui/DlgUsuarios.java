@@ -168,7 +168,6 @@ public class DlgUsuarios extends javax.swing.JDialog {
         lblCorr1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCorr1.setText("Telefono");
 
-        txtAltIDC.setEditable(false);
         txtAltIDC.setText("0");
         txtAltIDC.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtAltIDC.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -557,7 +556,6 @@ public class DlgUsuarios extends javax.swing.JDialog {
         lblCamNom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblCamNom.setText("Nombre");
 
-        txtCamIDU.setEditable(false);
         txtCamIDU.setText("0");
         txtCamIDU.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
         txtCamIDU.addKeyListener(new java.awt.event.KeyAdapter() {
