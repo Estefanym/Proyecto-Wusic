@@ -11,28 +11,30 @@ import javax.swing.table.DefaultTableModel;
 import model.Categorias;
 
 public class DlgCategorias extends javax.swing.JDialog {
-    DefaultTableModel e,c;
+
+    DefaultTableModel e, c;
+
     public DlgCategorias(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.setResizable(false);
         initComponents();
-        e = (DefaultTableModel)tblClienteE.getModel();
-        c = (DefaultTableModel)tblClienteC.getModel();
+        e = (DefaultTableModel) tblClienteE.getModel();
+        c = (DefaultTableModel) tblClienteC.getModel();
         //BOTON AGREGAR
-        ImageIcon icagre=new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
-        Icon iconoagre=new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icagre = new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
+        Icon iconoagre = new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnAgregar.setIcon(iconoagre);
         //BOTON ELIMINAR
-        ImageIcon icelim=new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
-        Icon iconoelim=new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icelim = new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
+        Icon iconoelim = new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscarE.setIcon(iconoelim);
         //BOTON BUSCAR
-        ImageIcon icbuscar=new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
-        Icon iconobuscar=new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icbuscar = new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
+        Icon iconobuscar = new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscar.setIcon(iconobuscar);
         //BOTON MODIFICAR
-        ImageIcon icmodif=new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
-        Icon iconomodif=new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icmodif = new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
+        Icon iconomodif = new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnModif.setIcon(iconomodif);
         //Deshabilitar botones
         btnAgregar.setEnabled(false);
@@ -85,7 +87,7 @@ public class DlgCategorias extends javax.swing.JDialog {
         lblAvisoTC = new javax.swing.JLabel();
         pnlConsultas = new javax.swing.JPanel();
         lblConsIdCan = new javax.swing.JLabel();
-        txtConIDCan = new javax.swing.JTextField();
+        txtConIDCat = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         lblAvisoID3 = new javax.swing.JLabel();
         btnBuscarTds = new javax.swing.JButton();
@@ -500,13 +502,13 @@ public class DlgCategorias extends javax.swing.JDialog {
         lblConsIdCan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblConsIdCan.setText("ID Categoria:");
 
-        txtConIDCan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtConIDCan.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtConIDCat.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtConIDCat.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyReleased(evt);
+                txtConIDCatKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyTyped(evt);
+                txtConIDCatKeyTyped(evt);
             }
         });
 
@@ -560,7 +562,7 @@ public class DlgCategorias extends javax.swing.JDialog {
                         .addComponent(lblConsIdCan)
                         .addGap(45, 45, 45)
                         .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConIDCat, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlConsultasLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(btnBuscar)))
@@ -580,7 +582,7 @@ public class DlgCategorias extends javax.swing.JDialog {
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblConsIdCan)
-                        .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtConIDCat, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblAvisoID3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -624,30 +626,29 @@ public class DlgCategorias extends javax.swing.JDialog {
         Object categoriaC[] = new Object[2];
         DAOcategorias categoria = new DAOcategorias();
         ArrayList<Categorias> categorias = null;
-        while (c.getRowCount() > 0){
+        while (c.getRowCount() > 0) {
             c.removeRow(0);
         }
-        if(c.getRowCount() == 0){
+        if (c.getRowCount() == 0) {
             try {
                 categorias = categoria.select();
                 for (Categorias cat : categorias) {
 
-                    categoriaC[0] =  cat.getId_categoria();
-                    categoriaC[1] =  cat.getTipo_contenido();
+                    categoriaC[0] = cat.getId_categoria();
+                    categoriaC[1] = cat.getTipo_contenido();
 
                     c.addRow(categoriaC);
                 }
-            }
-            catch (SQLException ex) {
+            } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");
+        txtConIDCat.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         boolean encontrado = false;
-        idBuscar = Integer.parseInt(txtConIDCan.getText());
+        idBuscar = Integer.parseInt(txtConIDCat.getText());
         Object categoriaM[] = new Object[2];
         DAOcategorias categoria = new DAOcategorias();
         ArrayList<Categorias> categorias = null;
@@ -679,14 +680,14 @@ public class DlgCategorias extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
-        //validarNumeros(evt);
-    }//GEN-LAST:event_txtConIDCanKeyTyped
+    private void txtConIDCatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCatKeyTyped
+        validarNumeros(evt);
+    }//GEN-LAST:event_txtConIDCatKeyTyped
 
-    private void txtConIDCanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyReleased
-        //habilitarBotonB();
-        //validarVacios3();
-    }//GEN-LAST:event_txtConIDCanKeyReleased
+    private void txtConIDCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCatKeyReleased
+        habilitarBotonB();
+        validarVacios3();
+    }//GEN-LAST:event_txtConIDCatKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
         boolean categoriaEncontrada = false;
@@ -698,41 +699,38 @@ public class DlgCategorias extends javax.swing.JDialog {
         try {
             categorias = categoria.select();
             for (Categorias cat : categorias) {
-                if(cat.getId_categoria() == idModificar){
-                    categoriaM[0] =  cat.getId_categoria();
-                    categoriaM[1] =  cat.getTipo_contenido();
+                if (cat.getId_categoria() == idModificar) {
+                    categoriaM[0] = cat.getId_categoria();
+                    categoriaM[1] = cat.getTipo_contenido();
                     categoriaEncontrada = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        if(categoriaEncontrada){
+        if (categoriaEncontrada) {
             btnModif.setEnabled(true);
-            //habilitarCompMod();
-            //agrgarElementosModif(categoriaM);
-        }
-        else
-        JOptionPane.showMessageDialog(this, "Categoria no encontrada");
+            habilitarCompMod();
+            agrgarElementosModif(categoriaM);
+        } else
+            JOptionPane.showMessageDialog(this, "Categoria no encontrada");
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        //categoriaModId = Integer.parseInt(txtCamIDC.getText());
-        String categoriaModId_categoria = String.valueOf(txtCamIDC.getText());
+
+        categoriaModID = Integer.parseInt(txtCamIDC.getText());
         String categoriaModTipo_contenido = txtCamTC.getText();
 
-        //String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
         DAOcategorias categoria = new DAOcategorias();
         Categorias categoriaU = new Categorias();
-        //categoriaU.setId_categoria(categoriaModId_categoria);
+        categoriaU.setId_categoria(categoriaModID);
         categoriaU.setTipo_contenido(categoriaModTipo_contenido);
 
         try {
             if (categoria.update(categoriaU) != 0) {
                 JOptionPane.showMessageDialog(this, "Categoria modificada con exito");
-                //deshabilitarCompMod();
+                deshabilitarCompMod();
             } else {
                 JOptionPane.showMessageDialog(this, "La categoria no se modifico");
             }
@@ -742,24 +740,24 @@ public class DlgCategorias extends javax.swing.JDialog {
     }//GEN-LAST:event_btnModifActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        
-        if(idEliminar != 0){
+
+        if (idEliminar != 0) {
             DAOcategorias categoria = new DAOcategorias();
             Categorias deleteCategoria = new Categorias();
             deleteCategoria.setId_categoria(idEliminar);
             try {
-                if(categoria.delete(deleteCategoria) != 0){
+                if (categoria.delete(deleteCategoria) != 0) {
                     JOptionPane.showMessageDialog(this, "Categoria eliminada con exito");
                     txtBajID.setText("");
                     txtBajID.removeAll();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Hubo un error al eliminar la categoria");
                 }
-                else
-                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar la categoria");
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
@@ -767,60 +765,57 @@ public class DlgCategorias extends javax.swing.JDialog {
     private void btnBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEActionPerformed
         boolean categoriaEncontrada = false;
         idEliminar = Integer.parseInt(txtBajID.getText());
-        Object categoriaE[] = new Object[7];
+        Object categoriaE[] = new Object[2];
         DAOcategorias categoria = new DAOcategorias();
         ArrayList<Categorias> categoriass = null;
 
         try {
             categoriass = categoria.select();
             for (Categorias cat : categoriass) {
-                if(cat.getId_categoria()== idEliminar){
-                    categoriaE[0] =  cat.getId_categoria();
-                    categoriaE[1] =  cat.getTipo_contenido();
+                if (cat.getId_categoria() == idEliminar) {
+                    categoriaE[0] = cat.getId_categoria();
+                    categoriaE[1] = cat.getTipo_contenido();
                     categoriaEncontrada = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
         }
-        if(categoriaEncontrada){
+        if (categoriaEncontrada) {
 
-            if(e.getRowCount() == 0){
-                e.addRow( categoriaE);
+            if (e.getRowCount() == 0) {
+                e.addRow(categoriaE);
                 btnEliminar1.setEnabled(true);
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(this,"Categoria no encontrada");
+        } else {
+            JOptionPane.showMessageDialog(this, "Categoria no encontrada");
         }
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtBajIDKeyTyped
 
     private void txtBajIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyReleased
-        /*habilitarBotonE();
-        validarVacios2();*/
+        habilitarBotonE();
+        validarVacios2();
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String idcategoria = txtAltIDCat.getText();
+        int idcategoria = Integer.parseInt(txtAltIDCat.getText());
         String tipocontenido = txtAltTipoC.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-
-        //insertarCategoria(idcategoria,tipocontenido);
+        insertarCategoria(idcategoria, tipocontenido);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-     private void txtAltIDCKeyReleased(java.awt.event.KeyEvent evt) {                                   
-       // validarNumeros(evt);
-    }  
+    private void txtAltIDCKeyReleased(java.awt.event.KeyEvent evt) {
+        validarNumeros(evt);
+    }
     private void txtCamIDCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamIDCKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCamIDCKeyReleased
@@ -838,22 +833,21 @@ public class DlgCategorias extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCamTCKeyTyped
 
     private void txtAltTipoCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltTipoCKeyTyped
-        // validarRFC(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtAltTipoCKeyTyped
 
     private void txtAltTipoCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltTipoCKeyReleased
-        /* habilitarBoton();
-        validarVacios();*/
+        habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltTipoCKeyReleased
 
     private void txtAltIDCatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDCatKeyTyped
-        // validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtAltIDCatKeyTyped
 
-   
-    private void txtAltIDCKeyTyped(java.awt.event.KeyEvent evt) {                                   
-       // validarNumeros(evt);
-    }                                  
+    private void txtAltIDCKeyTyped(java.awt.event.KeyEvent evt) {
+        validarNumeros(evt);
+    }
 
     private void txtAltIDCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDCatKeyReleased
 
@@ -902,55 +896,21 @@ public class DlgCategorias extends javax.swing.JDialog {
     }
 
     public void validarVacios3() {
-        if (txtConIDCan.getText().isEmpty()) {
+        if (txtConIDCat.getText().isEmpty()) {
             lblAvisoID3.setText("ID obligatorio");
         } else {
             lblAvisoID3.setText("");
         }
     }
 
-    public void validarCorreo(java.awt.event.KeyEvent evento) {
-        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 44
-                || evento.getKeyChar() == 47
-                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 63
-                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 94
-                || evento.getKeyChar() == 96
-                || evento.getKeyChar() >= 123 && evento.getKeyChar() <= 255) {
+    public void validarNumeros(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this, "No se permite este caracter");
+            JOptionPane.showMessageDialog(this, "Solo Numeros");
         }
     }
-    
-    public void validarRFC(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=47
-                || evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo se permiten numeros y mayusculas");
-        }
-    }
-    
-    public void validarNumeros(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo Numeros");
-        }
-    }
-    
-    public void validarDomicilio(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()==33
-                ||evento.getKeyChar()==34
-                ||evento.getKeyChar()>=36 && evento.getKeyChar()<=43
-                ||evento.getKeyChar()==45
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
-        }
-    }
-    
+
     public void habilitarBoton() {
         if (txtAltIDCat.getText().isEmpty()
                 || txtAltTipoC.getText().isEmpty()) {
@@ -969,36 +929,37 @@ public class DlgCategorias extends javax.swing.JDialog {
         }
     }
 
-    public void habilitarBotonE(){
-        if(txtBajID.getText().isEmpty()){
+    public void habilitarBotonE() {
+        if (txtBajID.getText().isEmpty()) {
             btnBuscarE.setEnabled(false);
-        }else{
+        } else {
             btnBuscarE.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonB(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void habilitarBotonB() {
+        if (txtConIDCat.getText().isEmpty()) {
             btnBuscar.setEnabled(false);
-        }else{
+        } else {
             btnBuscar.setEnabled(true);
         }
     }
-    
-    public void validarCaracter(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
-                || evento.getKeyChar()>=210 && evento.getKeyChar()<=240
-                || evento.getKeyChar()>=242 && evento.getKeyChar()<=255){
+
+    public void validarCaracter(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 33 && evento.getKeyChar() <= 64
+                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 96
+                || evento.getKeyChar() >= 123 && evento.getKeyChar() <= 208
+                || evento.getKeyChar() >= 210 && evento.getKeyChar() <= 240
+                || evento.getKeyChar() >= 242 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
+            JOptionPane.showMessageDialog(this, "No se permiten caracteres especiales");
         }
     }
-    private void insertarCategoria(String idcategoria,String tipocontenido){
+
+    private void insertarCategoria(int id_categoria, String tipo_contenido) {
 
         DAOcategorias nuevaCategoria = new DAOcategorias();
-        Categorias categoria = new Categorias();
+        Categorias categoria = new Categorias(id_categoria, tipo_contenido);
         try {
             if (nuevaCategoria.insert(categoria) != 0) {
                 JOptionPane.showMessageDialog(this, "Categoria dada de alta con exito");
@@ -1052,9 +1013,9 @@ public class DlgCategorias extends javax.swing.JDialog {
     private javax.swing.JTextField txtBajID;
     private javax.swing.JTextField txtCamIDC;
     private javax.swing.JTextField txtCamTC;
-    private javax.swing.JTextField txtConIDCan;
+    private javax.swing.JTextField txtConIDCat;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0, empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, categoriaModID = 0, idBuscar = 0;
 
     private void agrgarElementosModif(Object[] categoriaM) {
         //emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente 

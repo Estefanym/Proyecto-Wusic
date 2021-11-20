@@ -11,28 +11,30 @@ import javax.swing.table.DefaultTableModel;
 import model.Generos;
 
 public class DlgGeneros extends javax.swing.JDialog {
-    DefaultTableModel e,c;
+
+    DefaultTableModel e, c;
+
     public DlgGeneros(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.setResizable(false);
         initComponents();
-        e = (DefaultTableModel)tblClienteE.getModel();
-        c = (DefaultTableModel)tblClienteC.getModel();
+        e = (DefaultTableModel) tblClienteE.getModel();
+        c = (DefaultTableModel) tblClienteC.getModel();
         //BOTON AGREGAR
-        ImageIcon icagre=new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
-        Icon iconoagre=new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icagre = new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
+        Icon iconoagre = new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnAgregar.setIcon(iconoagre);
         //BOTON ELIMINAR
-        ImageIcon icelim=new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
-        Icon iconoelim=new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icelim = new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
+        Icon iconoelim = new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscarE.setIcon(iconoelim);
         //BOTON BUSCAR
-        ImageIcon icbuscar=new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
-        Icon iconobuscar=new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icbuscar = new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
+        Icon iconobuscar = new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscar.setIcon(iconobuscar);
         //BOTON MODIFICAR
-        ImageIcon icmodif=new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
-        Icon iconomodif=new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icmodif = new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
+        Icon iconomodif = new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnModif.setIcon(iconomodif);
         //Deshabilitar botones
         btnAgregar.setEnabled(false);
@@ -90,7 +92,7 @@ public class DlgGeneros extends javax.swing.JDialog {
         btnBuscarM = new javax.swing.JButton();
         pnlConsultas = new javax.swing.JPanel();
         lblConsIdCan = new javax.swing.JLabel();
-        txtConIDCan = new javax.swing.JTextField();
+        txtConIDGen = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         lblAvisoID3 = new javax.swing.JLabel();
         btnBuscarTds = new javax.swing.JButton();
@@ -522,16 +524,13 @@ public class DlgGeneros extends javax.swing.JDialog {
                             .addGroup(pnlCambiosLayout.createSequentialGroup()
                                 .addComponent(pnlAv1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(63, 63, 63))
+                            .addComponent(btnBuscarM)
                             .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                .addGroup(pnlCambiosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBuscarM)
-                                    .addGroup(pnlCambiosLayout.createSequentialGroup()
-                                        .addComponent(lblAvisoIdGenCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblAvisoOyCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblAvisoNombreCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(lblAvisoIdGenCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAvisoOyCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblAvisoNombreCam, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnModif)
                         .addGap(103, 103, 103))
@@ -552,13 +551,13 @@ public class DlgGeneros extends javax.swing.JDialog {
         lblConsIdCan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblConsIdCan.setText("ID Generos:");
 
-        txtConIDCan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtConIDCan.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtConIDGen.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtConIDGen.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyReleased(evt);
+                txtConIDGenKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyTyped(evt);
+                txtConIDGenKeyTyped(evt);
             }
         });
 
@@ -588,11 +587,11 @@ public class DlgGeneros extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_genero", "no_oyentes", "Contraseña"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -612,7 +611,7 @@ public class DlgGeneros extends javax.swing.JDialog {
                         .addComponent(lblConsIdCan)
                         .addGap(45, 45, 45)
                         .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConIDGen, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlConsultasLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(btnBuscar)))
@@ -632,7 +631,7 @@ public class DlgGeneros extends javax.swing.JDialog {
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblConsIdCan)
-                        .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtConIDGen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblAvisoID3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -694,12 +693,12 @@ public class DlgGeneros extends javax.swing.JDialog {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");
+        txtConIDGen.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         boolean encontrado = false;
-        idBuscar = Integer.parseInt(txtConIDCan.getText());
+        idBuscar = Integer.parseInt(txtConIDGen.getText());
         Object generoM[] = new Object[2];
         DAOgeneros genero = new DAOgeneros();
         ArrayList<Generos> generos = null;
@@ -732,14 +731,14 @@ public class DlgGeneros extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
-        //validarNumeros(evt);
-    }//GEN-LAST:event_txtConIDCanKeyTyped
+    private void txtConIDGenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDGenKeyTyped
+        validarNumeros(evt);
+    }//GEN-LAST:event_txtConIDGenKeyTyped
 
-    private void txtConIDCanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyReleased
-        //habilitarBotonB();
-        //validarVacios3();
-    }//GEN-LAST:event_txtConIDCanKeyReleased
+    private void txtConIDGenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDGenKeyReleased
+        habilitarBotonB();
+        validarVacios3();
+    }//GEN-LAST:event_txtConIDGenKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
         boolean generoEncontrado = false;
@@ -765,29 +764,28 @@ public class DlgGeneros extends javax.swing.JDialog {
         }
         if (generoEncontrado) {
             btnModif.setEnabled(true);
-            //habilitarCompMod();
-            //agrgarElementosModif(generoM);
+            habilitarCompMod();
+            agrgarElementosModif(generoM);
         } else
             JOptionPane.showMessageDialog(this, "Genero no encontrado");
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
         //Validar los INT o hacer la conversion del texto a entero.
-        String generoModId_genero = txtCamIDG.getText();
-        String generoModNo_oyentes = txtCamNoy.getText();
+        generoModID = Integer.parseInt(txtCamIDG.getText());
+        int generoModNo_oyentes = Integer.parseInt(txtCamNoy.getText());
         String generoModNombre_genero = txtCamNom.getText();
-
 
         DAOgeneros genero = new DAOgeneros();
         Generos generoU = new Generos();
-        //generoU.setId_genero(generoModId_genero);
-        //generoU.setNo_oyentes(generoModNo_oyentes);
+        generoU.setId_genero(generoModID);
+        generoU.setNo_oyentes(generoModNo_oyentes);
         generoU.setNombre_genero(generoModNombre_genero);
 
         try {
             if (genero.update(generoU) != 0) {
                 JOptionPane.showMessageDialog(this, "Genero modificado con exito");
-                //deshabilitarCompMod();
+                deshabilitarCompMod();
             } else {
                 JOptionPane.showMessageDialog(this, "El genero no se modifico");
             }
@@ -855,38 +853,37 @@ public class DlgGeneros extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtBajIDKeyTyped
 
     private void txtBajIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyReleased
-        /*habilitarBotonE();
-        validarVacios2();*/
+        habilitarBotonE();
+        validarVacios2();
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-       String generoModId_genero = txtAltIDG.getText();
-        String generoModNo_oyentes = txtAltOy.getText();
+        int generoModId = Integer.parseInt(txtAltIDG.getText());
+        int generoModNo_oyentes = Integer.parseInt(txtAltOy.getText());
         String generoModNombre_genero = txtAltNom.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-
-        //insertarGenero(generoModId_genero,generoModNo_oyentes,generoModNombre_genero);
+        insertarGenero(generoModId, generoModNo_oyentes, generoModNombre_genero);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtAltNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyTyped
-       // validarRFC(evt);
+         validarNumeros(evt);
     }//GEN-LAST:event_txtAltNomKeyTyped
 
     private void txtAltNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyReleased
-       /* habilitarBoton();
-        validarVacios();*/
+         habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltNomKeyReleased
 
-     private void txtAltIDGKeyReleased(java.awt.event.KeyEvent evt) {                                   
-       // validarNumeros(evt);
+    private void txtAltIDGKeyReleased(java.awt.event.KeyEvent evt) {
+         validarNumeros(evt);
     }
     private void txtAltIDGKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDGKeyTyped
-        // validarNumeros(evt);
+         validarNumeros(evt);
     }//GEN-LAST:event_txtAltIDGKeyTyped
 
 //GEN-FIRST:event_txtAltIDCKeyReleased
@@ -933,8 +930,7 @@ public class DlgGeneros extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCamNoyKeyTyped
 
-   
-     public void validarVacios() {
+    public void validarVacios() {
         if (txtAltIDG.getText().isEmpty()) {
             lblAvisoIdGen.setText("Campo obligatorio");
         } else {
@@ -980,61 +976,37 @@ public class DlgGeneros extends javax.swing.JDialog {
         }
 
     }
-    public void validarVacios2(){
-        if(txtBajID.getText().isEmpty()){
+
+    public void validarVacios2() {
+        if (txtBajID.getText().isEmpty()) {
             lblAvisoID2.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID2.setText("");
         }
     }
-    
-    public void validarVacios3(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void validarVacios3() {
+        if (txtConIDGen.getText().isEmpty()) {
             lblAvisoID3.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID3.setText("");
         }
     }
-    
-    public void validarCorreo(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=44
-                ||evento.getKeyChar()==47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=63
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=94
-                ||evento.getKeyChar()==96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
+
+    public void validarID(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 33 && evento.getKeyChar() <= 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 64
+                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permite este caracter");
+            JOptionPane.showMessageDialog(this, "Solo se permiten numeros y mayusculas");
         }
     }
-    
-    public void validarID(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=47
-                || evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=255){
+
+    public void validarNumeros(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo se permiten numeros y mayusculas");
-        }
-    }
-    
-    public void validarNumeros(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo Numeros");
-        }
-    }
-    
-    public void validarDomicilio(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()==33
-                ||evento.getKeyChar()==34
-                ||evento.getKeyChar()>=36 && evento.getKeyChar()<=43
-                ||evento.getKeyChar()==45
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
+            JOptionPane.showMessageDialog(this, "Solo Numeros");
         }
     }
 
@@ -1067,28 +1039,28 @@ public class DlgGeneros extends javax.swing.JDialog {
     }
 
     public void habilitarBotonB() {
-        if (txtConIDCan.getText().isEmpty()) {
+        if (txtConIDGen.getText().isEmpty()) {
             btnBuscar.setEnabled(false);
         } else {
             btnBuscar.setEnabled(true);
         }
     }
-    
-    public void validarCaracter(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
-                || evento.getKeyChar()>=210 && evento.getKeyChar()<=240
-                || evento.getKeyChar()>=242 && evento.getKeyChar()<=255){
+
+    public void validarCaracter(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 33 && evento.getKeyChar() <= 64
+                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 96
+                || evento.getKeyChar() >= 123 && evento.getKeyChar() <= 208
+                || evento.getKeyChar() >= 210 && evento.getKeyChar() <= 240
+                || evento.getKeyChar() >= 242 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
+            JOptionPane.showMessageDialog(this, "No se permiten caracteres especiales");
         }
     }
 
-    /*private void insertarGenero(String generoModId_genero, String generoModNo_oyentes, String generoModNombre_genero) {
+    private void insertarGenero(int id_genero, int no_oyentes, String nombre_genero) {
 
         DAOgeneros nuevoGenero = new DAOgeneros();
-        Generos genero = new Generos(generoModId_genero, generoModNo_oyentes, generoModNombre_genero);
+        Generos genero = new Generos(id_genero, no_oyentes, nombre_genero);
         try {
             if (nuevoGenero.insert(genero) != 0) {
                 JOptionPane.showMessageDialog(this, "Genero dado de alta con exito");
@@ -1098,7 +1070,7 @@ public class DlgGeneros extends javax.swing.JDialog {
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -1119,19 +1091,10 @@ public class DlgGeneros extends javax.swing.JDialog {
     private javax.swing.JLabel lblAvisoID3;
     private javax.swing.JLabel lblAvisoIDG1;
     private javax.swing.JLabel lblAvisoIdGen;
-    private javax.swing.JLabel lblAvisoIdGen1;
-    private javax.swing.JLabel lblAvisoIdGen2;
-    private javax.swing.JLabel lblAvisoIdGen3;
     private javax.swing.JLabel lblAvisoIdGenCam;
     private javax.swing.JLabel lblAvisoNombre;
-    private javax.swing.JLabel lblAvisoNombre2;
-    private javax.swing.JLabel lblAvisoNombre3;
-    private javax.swing.JLabel lblAvisoNombre4;
     private javax.swing.JLabel lblAvisoNombreCam;
     private javax.swing.JLabel lblAvisoOy;
-    private javax.swing.JLabel lblAvisoOy1;
-    private javax.swing.JLabel lblAvisoOy2;
-    private javax.swing.JLabel lblAvisoOy3;
     private javax.swing.JLabel lblAvisoOyCam;
     private javax.swing.JLabel lblBajID;
     private javax.swing.JLabel lblCamNom;
@@ -1142,9 +1105,6 @@ public class DlgGeneros extends javax.swing.JDialog {
     private javax.swing.JPanel pnlAltas;
     private javax.swing.JPanel pnlAv;
     private javax.swing.JPanel pnlAv1;
-    private javax.swing.JPanel pnlAv2;
-    private javax.swing.JPanel pnlAv3;
-    private javax.swing.JPanel pnlAv4;
     private javax.swing.JPanel pnlBajas;
     private javax.swing.JPanel pnlCambios;
     private javax.swing.JPanel pnlConsultas;
@@ -1159,22 +1119,25 @@ public class DlgGeneros extends javax.swing.JDialog {
     private javax.swing.JTextField txtCamIDG;
     private javax.swing.JTextField txtCamNom;
     private javax.swing.JTextField txtCamNoy;
-    private javax.swing.JTextField txtConIDCan;
+    private javax.swing.JTextField txtConIDGen;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0, empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, generoModID = 0, idBuscar = 0;
 
     private void agrgarElementosModif(Object[] generoM) {
 //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
+        txtCamIDG.setText(generoM[0].toString());
         txtCamNoy.setText(generoM[1].toString());
         txtCamNom.setText(generoM[2].toString());
     }
 
     private void habilitarCompMod() {
+        txtCamIDG.setEditable(true);
         txtCamNoy.setEditable(true);
         txtCamNom.setEditable(true);
     }
 
     private void deshabilitarCompMod() {
+        txtCamIDG.setEditable(false);
         txtCamNoy.setEditable(false);
         txtCamNom.setEditable(false);
     }

@@ -926,7 +926,7 @@ public class DlgAlbums extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_album", "id_artista", "nombre", "fecha_estreno", "explicita", "num_oyentes", "CDFI"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1037,7 +1037,7 @@ public class DlgAlbums extends javax.swing.JDialog {
                 ex.printStackTrace(System.out);
             }
         }
-        //txtConIDCan.setText("");*/
+        txtConIDCan.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -1081,17 +1081,17 @@ public class DlgAlbums extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtConIDCanKeyTyped
 
     private void txtConIDCanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyReleased
-        //habilitarBotonB();
-        //validarVacios3();
+        habilitarBotonB();
+        validarVacios3();
     }//GEN-LAST:event_txtConIDCanKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
         boolean albumEncontrado = false;
-        idModificar = Integer.parseInt(txtCamIDG.getText());
+        idModificar = Integer.parseInt(txtCamIDA.getText());
         Object albumM[] = new Object[7];
         DAOalbums album = new DAOalbums();
         ArrayList<Albums> albums = null;
@@ -1125,29 +1125,28 @@ public class DlgAlbums extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarMActionPerformed
 
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        int albumCamID = Integer.parseInt(txtCamIDA.getText());
-        //String albumCamId = txtCamIDA.getText();
+        albumModID = Integer.parseInt(txtCamIDA.getText());
         int albumCamIdart = Integer.parseInt(txtCamIDG.getText());
         String albumCamNombre = txtCamNom.getText();
         String albumCamFechaes = txtCamFE.getText();
-        String albumCamExplicita = cmbCamEx.getSelectedItem().toString();
+        String albumCamExp = cmbCamEx.getSelectedItem().toString();
         int albumCamOyentes = Integer.parseInt(txtCamOye.getText());
         String albumCamDiscografia = txtCamDisc.getText();
-                //CmbBxAltCFDICli1.getSelectedItem().toString();
 
-        DAOalbums cliente = new DAOalbums();
+
+        DAOalbums album = new DAOalbums();
         Albums albumU = new Albums();
-        albumU.setId_album(albumCamID);
+        albumU.setId_album(albumModID);
         albumU.setId_artista(albumCamIdart);
         albumU.setNombre(albumCamNombre);
         albumU.setFecha_estreno(albumCamFechaes);
-        albumU.setExplicita(albumCamExplicita);
+        albumU.setExplicita(albumCamExp);
         albumU.setNum_Oyentes(albumCamOyentes);
         albumU.setDiscografia(albumCamDiscografia);
         try {
-            if(cliente.update(albumU) != 0){
+            if(album.update(albumU) != 0){
                 JOptionPane.showMessageDialog(this, "Album modificado con exito");
-                //deshabilitarCompMod();
+                deshabilitarCompMod();
             }
             else
             JOptionPane.showMessageDialog(this, "El Album no se modifico");
@@ -1219,12 +1218,12 @@ public class DlgAlbums extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtBajIDKeyTyped
 
     private void txtBajIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyReleased
-        /*habilitarBotonE();
-        validarVacios2();*/
+        habilitarBotonE();
+        validarVacios2();
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void txtAltFEKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltFEKeyTyped
@@ -1250,16 +1249,16 @@ public class DlgAlbums extends javax.swing.JDialog {
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
 
-        //insertarAlbum(albumID,albumIdart,albumNombre,albumFechaes,albumExplicita,albumOyentes,albumDiscografia);
+        insertarAlbum(albumID,albumIdart,albumNombre,albumFechaes,albumExplicita,albumOyentes,albumDiscografia);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtAltDiscKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyTyped
-        //validarCorreo(evt);
+        validarCaracter(evt);
     }//GEN-LAST:event_txtAltDiscKeyTyped
 
     private void txtAltDiscKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyReleased
-        /*habilitarBoton();
-        validarVacios();*/
+        habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltDiscKeyReleased
 
     private void txtAltDiscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltDiscActionPerformed
@@ -1267,28 +1266,28 @@ public class DlgAlbums extends javax.swing.JDialog {
     }//GEN-LAST:event_txtAltDiscActionPerformed
 
     private void txtAltNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyTyped
-       // validarRFC(evt);
+       validarCaracter(evt);
     }//GEN-LAST:event_txtAltNomKeyTyped
 
     private void txtAltNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyReleased
-       /* habilitarBoton();
-        validarVacios();*/
+       habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltNomKeyReleased
 
     private void txtAltArtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltArtKeyTyped
-        //validarCaracter(evt);
+       validarNumeros(evt);
     }//GEN-LAST:event_txtAltArtKeyTyped
 
     private void txtAltArtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltArtKeyReleased
-        /*habilitarBoton();
-        validarVacios();*/
+        habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltArtKeyReleased
 
     private void txtAltIDAlKeyReleased(java.awt.event.KeyEvent evt) {                                   
-       // validarNumeros(evt);
+       validarNumeros(evt);
     }  
     private void txtAltIDAlKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDAlKeyTyped
-       // validarNumeros(evt);
+       validarNumeros(evt);
     }//GEN-LAST:event_txtAltIDAlKeyTyped
 
 //GEN-FIRST:event_txtAltIDCKeyReleased
@@ -1356,12 +1355,12 @@ public class DlgAlbums extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCamOyeKeyTyped
 
     private void txtCamIDGKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamIDGKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtCamIDGKeyTyped
 
     private void txtCamIDGKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamIDGKeyReleased
-        /*habilitarBotonM();
-        validarVacios1();*/
+        habilitarBotonM();
+        validarVacios1();
     }//GEN-LAST:event_txtCamIDGKeyReleased
 
     private void txtAltIDAlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltIDAlActionPerformed
@@ -1466,57 +1465,24 @@ public class DlgAlbums extends javax.swing.JDialog {
         }
     }
     
-    public void validarCorreo(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=44
-                ||evento.getKeyChar()==47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=63
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=94
-                ||evento.getKeyChar()==96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
+    
+    public void validarNumeros(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permite este caracter");
+            JOptionPane.showMessageDialog(this, "Solo Numeros");
         }
     }
-    
-    public void validarRFC(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=47
-                || evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo se permiten numeros y mayusculas");
-        }
-    }
-    
-    public void validarNumeros(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo Numeros");
-        }
-    }
-    
-    public void validarDomicilio(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()==33
-                ||evento.getKeyChar()==34
-                ||evento.getKeyChar()>=36 && evento.getKeyChar()<=43
-                ||evento.getKeyChar()==45
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
-        }
-    }
-    
-    public void habilitarBoton(){
-        if(txtAltIDAl.getText().isEmpty() 
-                || txtAltArt.getText().isEmpty() 
-                || txtAltNom.getText().isEmpty() 
-                || txtAltFE.getText().isEmpty() 
+
+    public void habilitarBoton() {
+        if (txtAltIDAl.getText().isEmpty()
+                || txtAltArt.getText().isEmpty()
+                || txtAltNom.getText().isEmpty()
+                || txtAltFE.getText().isEmpty()
                 || txtAltOy.getText().isEmpty()
-                || txtAltDisc.getText().isEmpty()){
+                || txtAltDisc.getText().isEmpty()) {
             btnAgregar.setEnabled(false);
-        }else{
+        } else {
             btnAgregar.setEnabled(true);
         }
     }
@@ -1550,7 +1516,7 @@ public class DlgAlbums extends javax.swing.JDialog {
         }
     }
     
-    /*public void validarCaracter(java.awt.event.KeyEvent evento){
+    public void validarCaracter(java.awt.event.KeyEvent evento){
         if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
                 || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
                 || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
@@ -1560,7 +1526,7 @@ public class DlgAlbums extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
         }
     }
-    private void insertarCliente(String emailCliente, String passwordCliente, String rsCliente, String rfcCLiente, String domicilioCliente, String cdfiCliente){
+    private void insertarAlbum(int id_album, int id_artista, String nombre, String fecha_estreno, String explicita, int num_oyentes, String discografia) {
         /*INSERT
         1.- Crear una instancia del objeto DAOclientes
                 DAOempleados nuevoEmpleado = new DAOempleados();
@@ -1571,20 +1537,20 @@ public class DlgAlbums extends javax.swing.JDialog {
                 //o un constructor que inicialice todo
         3.- Una vez que se llenan los datos para el objeto empleadoI, ejecutar
                 nuevoEmpleado.insert(empleadoI); //Devulve un entero si se aplico el INSERT, exactamente un 1 porque
-                                        //esa es la cantidad de registros que inserto
-        
-        
-        /*DAOclientes nuevoCliente = new DAOclientes();
-        Clientes cliente = new Clientes(emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente);
+                                        //esa es la cantidad de registros que inserto*/
+
+        DAOalbums nuevoAlbum = new DAOalbums();
+        Albums album = new Albums(id_album, id_artista, nombre, fecha_estreno, explicita, num_oyentes, discografia);
         try {
-            if(nuevoCliente.insert(cliente) != 0)
-                JOptionPane.showMessageDialog(this,"Cliente dado de alta con exito");
-            else
-                JOptionPane.showMessageDialog(this,"El cliente no pudo ser dado de alta");
+            if (nuevoAlbum.insert(album) != 0) {
+                JOptionPane.showMessageDialog(this, "Album dado de alta con exito");
+            } else {
+                JOptionPane.showMessageDialog(this, "El album no pudo ser dado de alta");
+            }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -1665,32 +1631,36 @@ public class DlgAlbums extends javax.swing.JDialog {
     private javax.swing.JTextField txtCamOye;
     private javax.swing.JTextField txtConIDCan;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0,empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, albumModID = 0, idBuscar = 0;
 
-    //private void agrgarElementosModif(Object[] albumM) {
-//        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-       /* txtModCorr.setText(clienteM[1].toString());
-        txtModCont.setText(clienteM[2].toString());
-        txtModRaz.setText(clienteM[3].toString());
-        txtModRFC.setText(clienteM[4].toString());
-        txtModDom.setText(clienteM[5].toString());
-//        txtModCont.setText(empleadoM[6].toString());        
-    }*/
-    
-   /* private void habilitarCompMod(){
-        txtModCorr.setEditable(true);
-        txtModCont.setEditable(true);
-        txtModRaz.setEditable(true);
-        txtModRFC.setEditable(true);
-        txtModDom.setEditable(true);
-//        txtModCont.setEditable(true);
+    private void agrgarElementosModif(Object[] albumM) {
+        //emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente 
+        txtCamIDA.setText(albumM[0].toString());
+        txtCamIDG.setText(albumM[1].toString());
+        txtCamNom.setText(albumM[2].toString());
+        txtCamFE.setText(albumM[3].toString());
+        cmbCamEx.setSelectedItem(albumM[4].toString());
+        txtCamOye.setText(albumM[5].toString());
+        txtCamDisc.setText(albumM[6].toString());
     }
-    private void deshabilitarCompMod(){
-        txtModCorr.setEditable(false);
-        txtModCont.setEditable(false);
-        txtModRaz.setEditable(false);
-        txtModRFC.setEditable(false);
-        txtModDom.setEditable(false);
-//        txtModCont.setEditable(true);
-    }*/
+
+    private void habilitarCompMod() {
+        txtCamIDA.setEditable(true);
+        txtCamIDG.setEditable(true);
+        txtCamNom.setEditable(true);
+        txtCamFE.setEditable(true);
+        cmbCamEx.setEditable(true);
+        txtCamOye.setEditable(true);
+        txtCamDisc.setEditable(true);
+    }
+
+    private void deshabilitarCompMod() {
+        txtCamIDA.setEditable(false);
+        txtCamIDG.setEditable(false);
+        txtCamNom.setEditable(false);
+        txtCamFE.setEditable(false);
+        cmbCamEx.setEditable(false);
+        txtCamOye.setEditable(false);
+        txtCamDisc.setEditable(true);
+    }
 }

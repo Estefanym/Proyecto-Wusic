@@ -758,7 +758,7 @@
                               <Component id="lblConsIdCan" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtConIDCan" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Component id="txtConIDGen" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                       <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
@@ -786,7 +786,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblConsIdCan" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtConIDCan" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="txtConIDGen" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lblAvisoID3" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
@@ -811,7 +811,7 @@
                 <Property name="text" type="java.lang.String" value="ID Generos:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtConIDCan">
+            <Component class="javax.swing.JTextField" name="txtConIDGen">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -822,8 +822,8 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtConIDCanKeyReleased"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtConIDCanKeyTyped"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtConIDGenKeyReleased"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtConIDGenKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscar">
@@ -874,14 +874,10 @@
                 <Component class="javax.swing.JTable" name="tblClienteC">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="7" rowCount="0">
-                        <Column editable="false" title="ID" type="java.lang.Object"/>
-                        <Column editable="false" title="Email" type="java.lang.Object"/>
+                      <Table columnCount="3" rowCount="0">
+                        <Column editable="false" title="id_genero" type="java.lang.Object"/>
+                        <Column editable="false" title="no_oyentes" type="java.lang.Object"/>
                         <Column editable="false" title="Contrase&#xf1;a" type="java.lang.Object"/>
-                        <Column editable="false" title="Razon Social" type="java.lang.Object"/>
-                        <Column editable="false" title="RFC" type="java.lang.Object"/>
-                        <Column editable="false" title="Domicilio" type="java.lang.Object"/>
-                        <Column editable="false" title="CDFI" type="java.lang.Object"/>
                       </Table>
                     </Property>
                   </Properties>

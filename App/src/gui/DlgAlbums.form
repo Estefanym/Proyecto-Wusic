@@ -1381,12 +1381,12 @@
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="7" rowCount="0">
-                        <Column editable="false" title="ID" type="java.lang.Object"/>
-                        <Column editable="false" title="Email" type="java.lang.Object"/>
-                        <Column editable="false" title="Contrase&#xf1;a" type="java.lang.Object"/>
-                        <Column editable="false" title="Razon Social" type="java.lang.Object"/>
-                        <Column editable="false" title="RFC" type="java.lang.Object"/>
-                        <Column editable="false" title="Domicilio" type="java.lang.Object"/>
+                        <Column editable="false" title="id_album" type="java.lang.Object"/>
+                        <Column editable="false" title="id_artista" type="java.lang.Object"/>
+                        <Column editable="false" title="nombre" type="java.lang.Object"/>
+                        <Column editable="false" title="fecha_estreno" type="java.lang.Object"/>
+                        <Column editable="false" title="explicita" type="java.lang.Object"/>
+                        <Column editable="false" title="num_oyentes" type="java.lang.Object"/>
                         <Column editable="false" title="CDFI" type="java.lang.Object"/>
                       </Table>
                     </Property>

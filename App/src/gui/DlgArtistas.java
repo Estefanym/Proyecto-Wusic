@@ -11,28 +11,30 @@ import javax.swing.table.DefaultTableModel;
 import model.Artistas;
 
 public class DlgArtistas extends javax.swing.JDialog {
-    DefaultTableModel e,c;
+
+    DefaultTableModel e, c;
+
     public DlgArtistas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.setResizable(false);
         initComponents();
-        e = (DefaultTableModel)tblClienteE.getModel();
-        c = (DefaultTableModel)tblClienteC.getModel();
+        e = (DefaultTableModel) tblClienteE.getModel();
+        c = (DefaultTableModel) tblClienteC.getModel();
         //BOTON AGREGAR
-        ImageIcon icagre=new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
-        Icon iconoagre=new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icagre = new ImageIcon(getClass().getResource("/Imagenes/agregar.png"));
+        Icon iconoagre = new ImageIcon(icagre.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnAgregar.setIcon(iconoagre);
         //BOTON ELIMINAR
-        ImageIcon icelim=new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
-        Icon iconoelim=new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icelim = new ImageIcon(getClass().getResource("/Imagenes/eliminar.png"));
+        Icon iconoelim = new ImageIcon(icelim.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscarE.setIcon(iconoelim);
         //BOTON BUSCAR
-        ImageIcon icbuscar=new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
-        Icon iconobuscar=new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icbuscar = new ImageIcon(getClass().getResource("/Imagenes/buscar.png"));
+        Icon iconobuscar = new ImageIcon(icbuscar.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnBuscar.setIcon(iconobuscar);
         //BOTON MODIFICAR
-        ImageIcon icmodif=new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
-        Icon iconomodif=new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
+        ImageIcon icmodif = new ImageIcon(getClass().getResource("/Imagenes/edit.png"));
+        Icon iconomodif = new ImageIcon(icmodif.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT));
         btnModif.setIcon(iconomodif);
         //Deshabilitar botones
         btnAgregar.setEnabled(false);
@@ -112,7 +114,7 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblAvisoDisc1 = new javax.swing.JLabel();
         pnlConsultas = new javax.swing.JPanel();
         lblConsIdCan = new javax.swing.JLabel();
-        txtConIDCan = new javax.swing.JTextField();
+        txtConIDArt = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         lblAvisoID3 = new javax.swing.JLabel();
         btnBuscarTds = new javax.swing.JButton();
@@ -751,13 +753,13 @@ public class DlgArtistas extends javax.swing.JDialog {
         lblConsIdCan.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblConsIdCan.setText("ID Artista:");
 
-        txtConIDCan.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
-        txtConIDCan.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtConIDArt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(221, 198, 164)));
+        txtConIDArt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyReleased(evt);
+                txtConIDArtKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtConIDCanKeyTyped(evt);
+                txtConIDArtKeyTyped(evt);
             }
         });
 
@@ -787,11 +789,11 @@ public class DlgArtistas extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Email", "Contraseña", "Razon Social", "RFC", "Domicilio", "CDFI"
+                "id_artista", "nombre_artista", "seguidores_artista", "discografia", "RFC"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -811,7 +813,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                         .addComponent(lblConsIdCan)
                         .addGap(45, 45, 45)
                         .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtConIDArt, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlConsultasLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(btnBuscar)))
@@ -831,7 +833,7 @@ public class DlgArtistas extends javax.swing.JDialog {
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblConsIdCan)
-                        .addComponent(txtConIDCan, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtConIDArt, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblAvisoID3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlConsultasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -895,12 +897,12 @@ public class DlgArtistas extends javax.swing.JDialog {
                 ex.printStackTrace(System.out);
             }
         }
-        txtConIDCan.setText("");
+        txtConIDArt.setText("");
     }//GEN-LAST:event_btnBuscarTdsActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         boolean encontrado = false;
-        idBuscar = Integer.parseInt(txtConIDCan.getText());
+        idBuscar = Integer.parseInt(txtConIDArt.getText());
         Object artistaM[] = new Object[4];
         DAOartistas artista = new DAOartistas();
         ArrayList<Artistas> artistas = null;
@@ -935,14 +937,14 @@ public class DlgArtistas extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtConIDCanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyTyped
-        //validarNumeros(evt);
-    }//GEN-LAST:event_txtConIDCanKeyTyped
+    private void txtConIDArtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDArtKeyTyped
+        validarNumeros(evt);
+    }//GEN-LAST:event_txtConIDArtKeyTyped
 
-    private void txtConIDCanKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDCanKeyReleased
-        //habilitarBotonB();
-        //validarVacios3();
-    }//GEN-LAST:event_txtConIDCanKeyReleased
+    private void txtConIDArtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtConIDArtKeyReleased
+        habilitarBotonB();
+        validarVacios3();
+    }//GEN-LAST:event_txtConIDArtKeyReleased
 
     private void btnBuscarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarMActionPerformed
         boolean artistaEncontrado = false;
@@ -997,150 +999,120 @@ public class DlgArtistas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtModCorrKeyReleased
 
     private void btnModifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifActionPerformed
-        /*empleadoModID = Integer.parseInt(txtCamIDG.getText());
-        String clienteModEmail = txtModCorr.getText();
-        String clienteModPass = txtModCont.getText();
-        String clienteModRs = txtModRaz.getText();
-        String clienteModRFC = txtModRFC.getText();
-        String clienteModDom = txtModDom.getText();
-        String cliadoModCdfi = CmbBxAltCFDICli1.getSelectedItem().toString();
+        artistaModID = Integer.parseInt(txtCamIDAr.getText());
+        String artistaCamNombre = txtCamNom.getText();
+        int artistaCamSeg = Integer.parseInt(txtCamSeg.getText());
+        String artistaCamDisc = txtCamDisc.getText();
+        String artistaCamRS = txtCamRedesS.getText();
 
-        /*
-        1.- Crear una instancia del objeto DAOClientes
-        DAOEmpleados empleado = new DAOEmpleados();
-        2.- Creamos un nuevo objeto de tipo Cliente
-        Empleados empleadosU = new Empleados();
-        //Agregamos el ID de la persona que deseamos modificar
-        empleadoU.setIdCliente(1);
-        empleadoU.setRsCliente("RS");
-        //Seteamos los demas parametros
-        3.- Ejecutamos
-        empleado.update(empleadosU);//Devulve un entero si se aplico el UPDATE, exactamente un 1 porque
-        //esa es la cantidad de registros que modifico
-        */
-        /*DAOclientes cliente = new DAOclientes();
-        Clientes clienteU = new Clientes();
-        clienteU.setIdCliente(empleadoModID);
-        clienteU.setEmailCliente(clienteModEmail);
-        clienteU.setPasswordCliente(clienteModPass);
-        clienteU.setRsCliente(clienteModRs);
-        clienteU.setRfcCLiente(clienteModRFC);
-        clienteU.setDomicilioCliente(clienteModDom);
-        clienteU.setCdfiCliente(cliadoModCdfi);
+        DAOartistas artista = new DAOartistas();
+        Artistas artistaU = new Artistas();
+        artistaU.setId_artista(artistaModID);
+        artistaU.setNombre_artista(artistaCamNombre);
+        artistaU.setSeguidores_artista(artistaCamSeg);
+        artistaU.setDiscografia(artistaCamDisc);
+        artistaU.setRedes_sociales(artistaCamRS);
+
         try {
-            if(cliente.update(clienteU) != 0){
+            if (artista.update(artistaU) != 0) {
                 JOptionPane.showMessageDialog(this, "Empleado modificado con exito");
                 deshabilitarCompMod();
+            } else {
+                JOptionPane.showMessageDialog(this, "El empleado no se modifico");
             }
-            else
-            JOptionPane.showMessageDialog(this, "El empleado no se modifico");
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }*/
+        }
     }//GEN-LAST:event_btnModifActionPerformed
 
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        /*DELETE
-        1.- Crear una instancia del objeto DAOEmpleados
-        DAOempleados empleado = new DAOempleados();
-        2.- Creamos un nuevo objeto de tipo Empleados
-        Empleados empleadoD = new Empleados();
-        3.- Agregamos al objeto persona el ID del empleado a eliminar
-        empleadoD.setIdCliente(1);
-        4.- Ejecutamos
-        empleado.delete(empleadoD);//Devulve un entero si se aplico el DELETE, exactamente un 1 porque
-        //esa es la cantidad de registros que elimino
-        */
-        /*if(idEliminar != 0){
-            DAOclientes cliente = new DAOclientes();
-            Clientes deleteCliente = new Clientes();
-            deleteCliente.setIdCliente(idEliminar);
+
+        if (idEliminar != 0) {
+            DAOartistas artista = new DAOartistas();
+            Artistas deleteArtista = new Artistas();
+            deleteArtista.setId_artista(idEliminar);
             try {
-                if(cliente.delete(deleteCliente) != 0){
-                    JOptionPane.showMessageDialog(this, "Cliente eliminado con exito");
+                if (artista.delete(deleteArtista) != 0) {
+                    JOptionPane.showMessageDialog(this, "Artista eliminado con exito");
                     txtBajID.setText("");
                     txtBajID.removeAll();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Hubo un error al eliminar al artista");
                 }
-                else
-                JOptionPane.showMessageDialog(this, "Hubo un error al eliminar el cliente");
             } catch (SQLException ex) {
                 ex.printStackTrace(System.out);
             }
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
-        }*/
+        }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEActionPerformed
-        /*boolean clienteEncontrado = false;
+        boolean artistaEncontrado = false;
         idEliminar = Integer.parseInt(txtBajID.getText());
-        Object clienteE[] = new Object[7];
-        DAOclientes cliente = new DAOclientes();
-        ArrayList<Clientes> clientess = null;
+        Object clienteE[] = new Object[5];
+        DAOartistas artista = new DAOartistas();
+        ArrayList<Artistas> artistass = null;
 
         try {
-            clientess = cliente.select();
-            for (Clientes clnt : clientess) {
-                if(clnt.getIdCliente()== idEliminar){
-                    clienteE[0] =  clnt.getIdCliente();
-                    clienteE[1] =  clnt.getEmailCliente();
-                    clienteE[2] =  clnt.getPasswordCliente();
-                    clienteE[3] =  clnt.getRsCliente();
-                    clienteE[4] =  clnt.getRfcCLiente();
-                    clienteE[5] =  clnt.getDomicilioCliente();
-                    clienteE[6] =  clnt.getCdfiCliente();
-                    clienteEncontrado = true;
+            artistass = artista.select();
+            for (Artistas art : artistass) {
+                if (art.getId_artista() == idEliminar) {
+                    clienteE[0] = art.getId_artista();
+                    clienteE[1] = art.getNombre_artista();
+                    clienteE[2] = art.getSeguidores_artista();
+                    clienteE[3] = art.getDiscografia();
+                    clienteE[4] = art.getRedes_sociales();
+
+                    artistaEncontrado = true;
                     break;
                 }
             }
-        }
-        catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
-        while (e.getRowCount() > 0){
+        while (e.getRowCount() > 0) {
             e.removeRow(0);
         }
-        if(clienteEncontrado){
+        if (artistaEncontrado) {
 
-            if(e.getRowCount() == 0){
+            if (e.getRowCount() == 0) {
                 e.addRow(clienteE);
                 btnEliminar1.setEnabled(true);
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Artista no encontrado");
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Cliente no encontrado");
-        }*/
     }//GEN-LAST:event_btnBuscarEActionPerformed
 
     private void txtBajIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyTyped
-        //validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtBajIDKeyTyped
 
     private void txtBajIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBajIDKeyReleased
-        /*habilitarBotonE();
-        validarVacios2();*/
+        habilitarBotonE();
+        validarVacios2();
     }//GEN-LAST:event_txtBajIDKeyReleased
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String idArtista = txtAltIDA.getText();
+        int idArtista = Integer.parseInt(txtAltIDA.getText());
         String nombreArtista = txtAltNom.getText();
-        String seguidoresArtista = txtAltSegu.getText();
+        int seguidoresArtista = Integer.parseInt(txtAltSegu.getText());
         String discografiaArtista = txtAltDisc.getText();
         String redesArtista = txtAltRedesS.getText();
 
         //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
-
-        insertarArtista(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
+        insertarArtista(idArtista, nombreArtista, seguidoresArtista, discografiaArtista, redesArtista);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtAltDiscKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyTyped
-        //validarCorreo(evt);
+        validarCaracter(evt);
     }//GEN-LAST:event_txtAltDiscKeyTyped
 
     private void txtAltDiscKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltDiscKeyReleased
-        /*habilitarBoton();
-        validarVacios();*/
+        habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltDiscKeyReleased
 
     private void txtAltDiscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltDiscActionPerformed
@@ -1148,19 +1120,19 @@ public class DlgArtistas extends javax.swing.JDialog {
     }//GEN-LAST:event_txtAltDiscActionPerformed
 
     private void txtAltNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyTyped
-       // validarRFC(evt);
+        validarCaracter(evt);
     }//GEN-LAST:event_txtAltNomKeyTyped
 
     private void txtAltNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltNomKeyReleased
-       /* habilitarBoton();
-        validarVacios();*/
+        habilitarBoton();
+        validarVacios();
     }//GEN-LAST:event_txtAltNomKeyReleased
 
-     private void txtAltIDAKeyReleased(java.awt.event.KeyEvent evt) {                                   
-       // validarNumeros(evt);
-    }  
+    private void txtAltIDAKeyReleased(java.awt.event.KeyEvent evt) {
+        validarNumeros(evt);
+    }
     private void txtAltIDAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAltIDAKeyTyped
-       // validarNumeros(evt);
+        validarNumeros(evt);
     }//GEN-LAST:event_txtAltIDAKeyTyped
 
 //GEN-FIRST:event_txtAltIDCKeyReleased
@@ -1214,53 +1186,51 @@ public class DlgArtistas extends javax.swing.JDialog {
     private void txtCamDiscKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCamDiscKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCamDiscKeyTyped
-    private void txtAltSeguKeyReleased(java.awt.event.KeyEvent evt){
-        
+    private void txtAltSeguKeyReleased(java.awt.event.KeyEvent evt) {
+
     }
-    
-    private void txtAltSeguActionPerformed(java.awt.event.ActionEvent evt){
-        
+
+    private void txtAltSeguActionPerformed(java.awt.event.ActionEvent evt) {
+
     }
-    
-    private void  txtAltSeguKeyTyped(java.awt.event.KeyEvent evt){
-        
+
+    private void txtAltSeguKeyTyped(java.awt.event.KeyEvent evt) {
+
     }
-    
-    
-    
-     public void validarVacios(){
-        if(txtAltIDA.getText().isEmpty()){ //id_artista
+
+    public void validarVacios() {
+        if (txtAltIDA.getText().isEmpty()) { //id_artista
             lblAvisoIDA.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoIDA.setText("");
         }
-        if(txtAltNom.getText().isEmpty()){ //nombre_artista
+        if (txtAltNom.getText().isEmpty()) { //nombre_artista
             lblAvisoNombre.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoNombre.setText("");
         }
-        if(txtAltSegu.getText().isEmpty()){ //seguidores_artista
+        if (txtAltSegu.getText().isEmpty()) { //seguidores_artista
             lblAvisoSeg.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoSeg.setText("");
         }
-        if(txtAltDisc.getText().isEmpty()){ //discografia
+        if (txtAltDisc.getText().isEmpty()) { //discografia
             lblAvisoDisc.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoDisc.setText("");
         }
-        if(txtAltDisc.getText().isEmpty()){
+        if (txtAltDisc.getText().isEmpty()) {
             lblAvisoDisc.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoDisc.setText("");
         }
-        if(txtAltRedesS.getText().isEmpty()){
+        if (txtAltRedesS.getText().isEmpty()) {
             lblAvisoRS.setText("Campo obligatorio");
-        }else{
+        } else {
             lblAvisoRS.setText("");
         }
     }
-     
+
     public void validarVacios1() {
         if (txtCamIDAr.getText().isEmpty()) {
             lblAvisoIDartCam.setText("Campo obligatorio");
@@ -1296,57 +1266,23 @@ public class DlgArtistas extends javax.swing.JDialog {
             lblAvisoID2.setText("");
         }
     }
-    
-    public void validarVacios3(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void validarVacios3() {
+        if (txtConIDArt.getText().isEmpty()) {
             lblAvisoID3.setText("ID obligatorio");
-        }else{
+        } else {
             lblAvisoID3.setText("");
         }
     }
-    
-    public void validarCorreo(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=44
-                ||evento.getKeyChar()==47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=63
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=94
-                ||evento.getKeyChar()==96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
+
+    public void validarNumeros(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 32 && evento.getKeyChar() <= 47
+                || evento.getKeyChar() >= 58 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permite este caracter");
+            JOptionPane.showMessageDialog(this, "Solo Numeros");
         }
     }
-    
-    public void validarRFC(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=47
-                || evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo se permiten numeros y mayusculas");
-        }
-    }
-    
-    public void validarNumeros(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=32 && evento.getKeyChar()<=47
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"Solo Numeros");
-        }
-    }
-    
-    public void validarDomicilio(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()==33
-                ||evento.getKeyChar()==34
-                ||evento.getKeyChar()>=36 && evento.getKeyChar()<=43
-                ||evento.getKeyChar()==45
-                ||evento.getKeyChar()>=58 && evento.getKeyChar()<=64
-                ||evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                ||evento.getKeyChar()>=123 && evento.getKeyChar()<=255){
-            evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
-        }
-    }
-    
+
     public void habilitarBoton() {
         if (txtAltIDA.getText().isEmpty()
                 || txtAltNom.getText().isEmpty()
@@ -1371,44 +1307,46 @@ public class DlgArtistas extends javax.swing.JDialog {
         }
     }
 
-    public void habilitarBotonE(){
-        if(txtBajID.getText().isEmpty()){
+    public void habilitarBotonE() {
+        if (txtBajID.getText().isEmpty()) {
             btnBuscarE.setEnabled(false);
-        }else{
+        } else {
             btnBuscarE.setEnabled(true);
         }
     }
-    
-    public void habilitarBotonB(){
-        if(txtConIDCan.getText().isEmpty()){
+
+    public void habilitarBotonB() {
+        if (txtConIDArt.getText().isEmpty()) {
             btnBuscar.setEnabled(false);
-        }else{
+        } else {
             btnBuscar.setEnabled(true);
         }
     }
-    
-    public void validarCaracter(java.awt.event.KeyEvent evento){
-        if(evento.getKeyChar()>=33 && evento.getKeyChar()<=64 
-                || evento.getKeyChar()>=91 && evento.getKeyChar()<=96
-                || evento.getKeyChar()>=123 && evento.getKeyChar()<=208
-                || evento.getKeyChar()>=210 && evento.getKeyChar()<=240
-                || evento.getKeyChar()>=242 && evento.getKeyChar()<=255){
+
+    public void validarCaracter(java.awt.event.KeyEvent evento) {
+        if (evento.getKeyChar() >= 33 && evento.getKeyChar() <= 64
+                || evento.getKeyChar() >= 91 && evento.getKeyChar() <= 96
+                || evento.getKeyChar() >= 123 && evento.getKeyChar() <= 208
+                || evento.getKeyChar() >= 210 && evento.getKeyChar() <= 240
+                || evento.getKeyChar() >= 242 && evento.getKeyChar() <= 255) {
             evento.consume();
-            JOptionPane.showMessageDialog(this,"No se permiten caracteres especiales");
+            JOptionPane.showMessageDialog(this, "No se permiten caracteres especiales");
         }
     }
-    private void insertarArtista(String idArtista, String nombreArtista, String seguidoresArtista, String discografiaArtista, String redesArtista){
-   
+
+    private void insertarArtista(int id_artista, String nombre_artista, int seguidores_artista, String discografia, String redes_sociales) {
+
         DAOartistas nuevoArtista = new DAOartistas();
-        /*Artistas artista = new Artistas(idArtista,nombreArtista,seguidoresArtista,discografiaArtista,redesArtista);
+        Artistas artista = new Artistas(id_artista, nombre_artista, seguidores_artista, discografia, redes_sociales);
         try {
-            if(nuevoArtista.insert(artista) != 0)
-                JOptionPane.showMessageDialog(this,"Artista dado de alta con exito");
-            else
-                JOptionPane.showMessageDialog(this,"El artista no pudo ser dado de alta");
+            if (nuevoArtista.insert(artista) != 0) {
+                JOptionPane.showMessageDialog(this, "Artista dado de alta con exito");
+            } else {
+                JOptionPane.showMessageDialog(this, "El artista no pudo ser dado de alta");
+            }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
-        }*/
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1478,14 +1416,15 @@ public class DlgArtistas extends javax.swing.JDialog {
     private javax.swing.JTextField txtCamNom;
     private javax.swing.JTextArea txtCamRedesS;
     private javax.swing.JTextField txtCamSeg;
-    private javax.swing.JTextField txtConIDCan;
+    private javax.swing.JTextField txtConIDArt;
     private javax.swing.JTextField txtModCont;
     private javax.swing.JTextField txtModCorr;
     // End of variables declaration//GEN-END:variables
-    private int idEliminar = 0, idModificar = 0,empleadoModID = 0, idBuscar = 0;
+    private int idEliminar = 0, idModificar = 0, artistaModID = 0, idBuscar = 0;
 
     private void agrgarElementosModif(Object[] clienteM) {
 //        emailCliente,passwordCliente,rsCliente,rfcCLiente,domicilioCliente,cdfiCliente
+        txtCamIDAr.setText(clienteM[1].toString());
         txtCamNom.setText(clienteM[1].toString());
         txtCamSeg.setText(clienteM[2].toString());
         txtCamDisc.setText(clienteM[3].toString());
@@ -1494,6 +1433,7 @@ public class DlgArtistas extends javax.swing.JDialog {
     }
 
     private void habilitarCompMod() {
+        txtCamIDAr.setEditable(true);
         txtCamNom.setEditable(true);
         txtCamSeg.setEditable(true);
         txtCamDisc.setEditable(true);
@@ -1501,6 +1441,7 @@ public class DlgArtistas extends javax.swing.JDialog {
     }
 
     private void deshabilitarCompMod() {
+        txtCamIDAr.setEditable(false);
         txtCamNom.setEditable(false);
         txtCamSeg.setEditable(false);
         txtCamDisc.setEditable(false);
